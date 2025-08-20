@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Shrek {
     public static void main(String[] args) {
@@ -9,6 +10,7 @@ public class Shrek {
         System.out.println("     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 
         Scanner myObj = new Scanner(System.in);
+        ArrayList<String> tasks = new ArrayList<String>();
 
         while (true) {
             String input = myObj.nextLine();
@@ -19,11 +21,18 @@ public class Shrek {
                 System.out.println("      See ya later");
                 System.out.println("     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
                 break;
+            } else if (input.equalsIgnoreCase("list")) {
+                System.out.println("     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+                for (int i = 0; i < tasks.size(); i++) {
+                    System.out.println("      " + (i + 1) + ": " + tasks.get(i));
+                }
+                System.out.println("     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+            } else {
+                tasks.add(input);
+                System.out.println("     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+                System.out.println("      added: " + input);
+                System.out.println("     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
             }
-
-            System.out.println("     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-            System.out.println("      " + input);
-            System.out.println("     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         }
         myObj.close();
     }
