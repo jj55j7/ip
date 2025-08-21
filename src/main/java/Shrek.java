@@ -18,11 +18,12 @@ public class Shrek {
             if (input.isEmpty()) continue; // ignore empty input
 
             String[] parts = input.split(" ", 2);
-            String command = parts[0].trim().toLowerCase();
+            String commandWord  = parts[0].trim().toLowerCase();
 
             try {
+                Command command = Command.fromString(commandWord);
                 switch (command) {
-                    case "bye" -> {
+                    case BYE -> {
                         System.out.println("     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
                         System.out.println("      Bye! I'm going to find Princess Fiona :)");
                         System.out.println("      See ya later");
@@ -30,7 +31,7 @@ public class Shrek {
                         myObj.close();
                         return; // exit program
                     }
-                    case "todo" -> {
+                    case TODO -> {
                         if (parts.length < 2 || parts[1].trim().isEmpty()) {
                             throw new ShrekException("No Onions?!? The description of a todo cannot be empty.");
                         }
@@ -38,7 +39,7 @@ public class Shrek {
                         tasks.add(t);
                         printAddedTask(t, tasks.size());
                     }
-                    case "deadline" -> {
+                    case DEADLINE -> {
                         if (parts.length < 2 || !parts[1].contains("/by")) {
                             throw new ShrekException("Deadlines must have a description and a /by date.");
                         }
@@ -52,7 +53,7 @@ public class Shrek {
                         tasks.add(t);
                         printAddedTask(t, tasks.size());
                     }
-                    case "event" -> {
+                    case EVENT -> {
                         if (parts.length < 2 || !parts[1].contains("/from") || !parts[1].contains("/to")) {
                             throw new ShrekException("Events must have a description, /from and /to times.");
                         }
@@ -68,8 +69,8 @@ public class Shrek {
                         tasks.add(t);
                         printAddedTask(t, tasks.size());
                     }
-                    case "list" -> printTaskList(tasks);
-                    case "mark" -> {
+                    case LIST -> printTaskList(tasks);
+                    case MARK -> {
                         if (parts.length < 2) {
                             throw new ShrekException("Missing Onion! Mark command needs exactly one task number.");
                         }
@@ -78,7 +79,7 @@ public class Shrek {
                         t.markAsDone();
                         printMarkUnmark(t, true);
                     }
-                    case "unmark" -> {
+                    case UNMARK -> {
                         if (parts.length < 2) {
                             throw new ShrekException("Missing Onion! Unmark command needs exactly one task number.");
                         }
@@ -87,7 +88,7 @@ public class Shrek {
                         t.markAsNotDone();
                         printMarkUnmark(t, false);
                     }
-                    case "delete" -> {
+                    case DELETE -> {
                         if (parts.length < 2) {
                             throw new ShrekException("Missing Onion! Delete command needs exactly one task number.");
                         }
@@ -96,7 +97,6 @@ public class Shrek {
                         tasks.remove(index);
                         printDeleteTask(tasks, t);
                     }
-
                     default -> throw new ShrekException("I don't speak your language. I don't understand: " + command);
                 }
             } catch (ShrekException e) {
