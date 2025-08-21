@@ -14,5 +14,20 @@ deadline do homework /by no idea :-p
 list
                   mark             4
 list
+todo
+todo read book
+deadline return
+deadline return book /by Sunday
+event meeting /from Mon 2pm
+event meeting /from Mon 2pm /to 4pm
+list
+mark me
+mark 100
+mark 1
+unmark me
+unmark 100
+unmark 1
+blahblah
+todo really really long description to test wrapping
 bye
 

@@ -6,69 +6,108 @@
      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      added: test item
+      I don't speak your language. I don't understand: test
      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      added: read book
+      I don't speak your language. I don't understand: read
      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      added: return book
+      I don't speak your language. I don't understand: return
      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      1:[ ] test item
-      2:[ ] read book
-      3:[ ] return book
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      BIG onion! or is it too small? Task number out of range.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      BIG onion! or is it too small? Task number out of range.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      Okies, onion (task) added:
+       [T][ ] borrow book
+      Now you have 1 tasks in the list.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      1:[T][ ] borrow book
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      Okies, onion (task) added:
+       [D][ ] return book (by: Sunday)
+      Now you have 2 tasks in the list.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      Okies, onion (task) added:
+       [E][ ] project meeting (from: Mon 2pm to: 4pm)
+      Now you have 3 tasks in the list.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      Okies, onion (task) added:
+       [D][ ] do homework (by: no idea :-p)
+      Now you have 4 tasks in the list.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      Okies, onion (task) added:
+       [T][ ] test    task
+      Now you have 5 tasks in the list.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      1:[T][ ] borrow book
+      2:[D][ ] return book (by: Sunday)
+      3:[E][ ] project meeting (from: Mon 2pm to: 4pm)
+      4:[D][ ] do homework (by: no idea :-p)
+      5:[T][ ] test    task
      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       Awesome! One layer of onion(task) has been removed
       (marked done)
-       [X] read book
+       [D][X] do homework (by: no idea :-p)
      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      One layer of onion(task) has been added back
-      (marked as not done yet)
-       [ ] read book
+      1:[T][ ] borrow book
+      2:[D][ ] return book (by: Sunday)
+      3:[E][ ] project meeting (from: Mon 2pm to: 4pm)
+      4:[D][X] do homework (by: no idea :-p)
+      5:[T][ ] test    task
      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      Okies, task added:
-       [T][ ] borrow book
-      4 tasks remain in the list.
+      No Onions?!? The description of a todo cannot be empty.
      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      1:[ ] test item
-      2:[ ] read book
-      3:[ ] return book
-      4:[T][ ] borrow book
-     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      Task with deadline added:
-       [D][ ] return book (by: Sunday)
-      Now you have 5 tasks in the list.
-     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      Event added:
-       [E][ ] project meeting (from: Mon 2pm to: 4pm)
+      Okies, onion (task) added:
+       [T][ ] read book
       Now you have 6 tasks in the list.
      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      Task with deadline added:
-       [D][ ] do homework (by: no idea :-p)
+      Deadlines must have a description and a /by date.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      Okies, onion (task) added:
+       [D][ ] return book (by: Sunday)
       Now you have 7 tasks in the list.
      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      Okies, task added:
-       [T][ ] test    task
-      8 tasks remain in the list.
+      Events must have a description, /from and /to times.
      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      1:[ ] test item
-      2:[ ] read book
-      3:[ ] return book
-      4:[T][ ] borrow book
-      5:[D][ ] return book (by: Sunday)
-      6:[E][ ] project meeting (from: Mon 2pm to: 4pm)
-      7:[D][ ] do homework (by: no idea :-p)
-      8:[T][ ] test    task
+      Okies, onion (task) added:
+       [E][ ] meeting (from: Mon 2pm to: 4pm)
+      Now you have 8 tasks in the list.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      1:[T][ ] borrow book
+      2:[D][ ] return book (by: Sunday)
+      3:[E][ ] project meeting (from: Mon 2pm to: 4pm)
+      4:[D][X] do homework (by: no idea :-p)
+      5:[T][ ] test    task
+      6:[T][ ] read book
+      7:[D][ ] return book (by: Sunday)
+      8:[E][ ] meeting (from: Mon 2pm to: 4pm)
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      Task number must be an integer.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      BIG onion! or is it too small? Task number out of range.
      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       Awesome! One layer of onion(task) has been removed
@@ -76,14 +115,23 @@
        [T][X] borrow book
      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      1:[ ] test item
-      2:[ ] read book
-      3:[ ] return book
-      4:[T][X] borrow book
-      5:[D][ ] return book (by: Sunday)
-      6:[E][ ] project meeting (from: Mon 2pm to: 4pm)
-      7:[D][ ] do homework (by: no idea :-p)
-      8:[T][ ] test    task
+      Task number must be an integer.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      BIG onion! or is it too small? Task number out of range.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      One layer of onion(task) has been added back
+      (marked as not done yet)
+       [T][ ] borrow book
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      I don't speak your language. I don't understand: blahblah
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      Okies, onion (task) added:
+       [T][ ] really really long description to test wrapping
+      Now you have 9 tasks in the list.
      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       Bye! I'm going to find Princess Fiona :)
