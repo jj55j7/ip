@@ -87,6 +87,16 @@ public class Shrek {
                         t.markAsNotDone();
                         printMarkUnmark(t, false);
                     }
+                    case "delete" -> {
+                        if (parts.length < 2) {
+                            throw new ShrekException("Missing Onion! Delete command needs exactly one task number.");
+                        }
+                        int index = parseIndex(parts[1], tasks.size());
+                        Task t = tasks.get(index);
+                        tasks.remove(index);
+                        printDeleteTask(tasks, t);
+                    }
+
                     default -> throw new ShrekException("I don't speak your language. I don't understand: " + command);
                 }
             } catch (ShrekException e) {
@@ -135,6 +145,13 @@ public class Shrek {
             System.out.println("      (marked as not done yet)");
         }
         System.out.println("       " + t);
+        System.out.println("     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+    }
+    private static void printDeleteTask(ArrayList<Task> tasks, Task t) {
+        System.out.println("     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        System.out.println("      One onion has been YEETED! (task removed)");
+        System.out.println("       " + t);
+        System.out.println("      Now you have " + tasks.size() + " tasks in the list.");
         System.out.println("     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
     }
 }

@@ -104,6 +104,11 @@
       8:[E][ ] meeting (from: Mon 2pm to: 4pm)
      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      Okies, onion (task) added:
+       [D][ ] return      blocks (by: Sunday)
+      Now you have 9 tasks in the list.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       Task number must be an integer.
      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -131,7 +136,95 @@
      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       Okies, onion (task) added:
        [T][ ] really really long description to test wrapping
+      Now you have 10 tasks in the list.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      Awesome! One layer of onion(task) has been removed
+      (marked done)
+       [D][X] do homework (by: no idea :-p)
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      1:[T][ ] borrow book
+      2:[D][ ] return book (by: Sunday)
+      3:[E][ ] project meeting (from: Mon 2pm to: 4pm)
+      4:[D][X] do homework (by: no idea :-p)
+      5:[T][ ] test    task
+      6:[T][ ] read book
+      7:[D][ ] return book (by: Sunday)
+      8:[E][ ] meeting (from: Mon 2pm to: 4pm)
+      9:[D][ ] return      blocks (by: Sunday)
+      10:[T][ ] really really long description to test wrapping
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      One onion has been YEETED! (task removed)
+       [D][ ] return book (by: Sunday)
       Now you have 9 tasks in the list.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      One onion has been YEETED! (task removed)
+       [T][ ] borrow book
+      Now you have 8 tasks in the list.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      BIG onion! or is it too small? Task number out of range.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      Okies, onion (task) added:
+       [T][ ] 1
+      Now you have 9 tasks in the list.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      Okies, onion (task) added:
+       [T][ ] 2
+      Now you have 10 tasks in the list.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      Okies, onion (task) added:
+       [T][ ] 3
+      Now you have 11 tasks in the list.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      Awesome! One layer of onion(task) has been removed
+      (marked done)
+       [D][X] do homework (by: no idea :-p)
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      Awesome! One layer of onion(task) has been removed
+      (marked done)
+       [T][X] test    task
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      1:[E][ ] project meeting (from: Mon 2pm to: 4pm)
+      2:[D][X] do homework (by: no idea :-p)
+      3:[T][X] test    task
+      4:[T][ ] read book
+      5:[D][ ] return book (by: Sunday)
+      6:[E][ ] meeting (from: Mon 2pm to: 4pm)
+      7:[D][ ] return      blocks (by: Sunday)
+      8:[T][ ] really really long description to test wrapping
+      9:[T][ ] 1
+      10:[T][ ] 2
+      11:[T][ ] 3
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      One onion has been YEETED! (task removed)
+       [D][X] do homework (by: no idea :-p)
+      Now you have 10 tasks in the list.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      1:[E][ ] project meeting (from: Mon 2pm to: 4pm)
+      2:[T][X] test    task
+      3:[T][ ] read book
+      4:[D][ ] return book (by: Sunday)
+      5:[E][ ] meeting (from: Mon 2pm to: 4pm)
+      6:[D][ ] return      blocks (by: Sunday)
+      7:[T][ ] really really long description to test wrapping
+      8:[T][ ] 1
+      9:[T][ ] 2
+      10:[T][ ] 3
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      I don't speak your language. I don't understand: hello
      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       Bye! I'm going to find Princess Fiona :)

@@ -21,6 +21,7 @@ deadline return book /by Sunday
 event meeting /from Mon 2pm
 event meeting /from Mon 2pm /to 4pm
 list
+           deadline     return      blocks      /by   Sunday
 mark me
 mark 100
 mark 1
@@ -29,5 +30,19 @@ unmark 100
 unmark 1
 blahblah
 todo really really long description to test wrapping
+mark 4
+list
+delete 2
+delete 1
+delete 100
+todo 1
+todo 2
+todo 3
+mark 2
+mark 3
+list
+delete 2
+list
+hello world!
 bye
 
