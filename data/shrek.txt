@@ -1,9 +1,4 @@
-E | 0 | heilsknf | adss | dsifhdk
-D | 1 | return book | Sunday
-E | 0 | project meeting | Mon 2pm | 4pm
-D | 0 | do homework | no idea :-p
 T | 0 | read book
-D | 0 | return      blocks | Sunday
 T | 1 | really really long description to test wrapping
 T | 0 | 1
 T | 0 | 2
@@ -16,3 +11,8 @@ T | 0 | 4
 T | 0 | 5
 T | 0 | 6
 T | 0 | 7
+T | 0 | task
+T | 0 | nothing
+E | 0 | go school | Dec 12 2025, 2:00pm | Dec 12 2025, 4:00pm
+D | 0 | submit assignment | Dec 12 2025
+E | 0 | go school | Dec 12 2025, 2:00pm | Dec 21 2025, 4:00pm
