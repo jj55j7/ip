@@ -1,3 +1,5 @@
+import java.time.LocalDate;
+import java.time.format.DateTimeParseException;
 import java.util.Scanner;
 import java.util.ArrayList;
 
@@ -105,6 +107,19 @@ public class Shrek {
                         storage.save(tasks);
                         printDeleteTask(tasks, t);
                     }
+                    case ONDATE -> {
+                        if (parts.length < 2 || parts[1].trim().isEmpty()) {
+                            throw new ShrekException("Shrek needs a date! Format: yyyy-MM-dd");
+                        }
+                        String dateStr = parts[1].trim();
+                        LocalDate queryDate;
+                        try {
+                            queryDate = LocalDate.parse(dateStr);
+                        } catch (DateTimeParseException e) {
+                            throw new ShrekException("Shrek needs a valid date in *yyyy-MM-dd* format, e.g. 2025-01-01");
+                        }
+                        printTasksOnDate(tasks, queryDate);
+                    }
                     default -> throw new ShrekException("I don't speak your language. I don't understand: " + command);
                 }
             } catch (ShrekException e) {
@@ -155,11 +170,39 @@ public class Shrek {
         System.out.println("       " + t);
         System.out.println("     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
     }
+
     private static void printDeleteTask(ArrayList<Task> tasks, Task t) {
         System.out.println("     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         System.out.println("      One onion has been YEETED! (task removed)");
         System.out.println("       " + t);
         System.out.println("      Now you have " + tasks.size() + " tasks in the list.");
+        System.out.println("     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+    }
+
+    private static void printTasksOnDate(ArrayList<Task> tasks, LocalDate date) {
+        System.out.println("     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        System.out.println("      Tasks on " + date + ":");
+        boolean found = false;
+
+        for (Task t : tasks) {
+            if (t instanceof Deadline d && d.by.equals(date)) {
+                System.out.println("       " + t);
+                found = true;
+            } else if (t instanceof Event e) {
+                LocalDate startDate = e.getFrom().toLocalDate();
+                LocalDate endDate = e.getTo().toLocalDate();
+
+                // Check if query date is within [startDate, endDate]
+                if ((date.isEqual(startDate) || date.isAfter(startDate)) &&
+                        (date.isEqual(endDate) || date.isBefore(endDate))) {
+                    System.out.println("       " + t);
+                    found = true;
+                }
+            }
+        }
+        if (!found) {
+            System.out.println("      No onions (tasks) on this date!");
+        }
         System.out.println("     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
     }
 }

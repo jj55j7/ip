@@ -6,7 +6,8 @@ public enum Command {
     MARK,
     UNMARK,
     DELETE,
-    BYE;
+    BYE,
+    ONDATE;
 
     public static Command fromString(String input) throws ShrekException {
         try {
