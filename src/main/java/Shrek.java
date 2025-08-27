@@ -11,7 +11,9 @@ public class Shrek {
         System.out.println("     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 
         Scanner myObj = new Scanner(System.in);
-        ArrayList<Task> tasks = new ArrayList<>();
+        Storage storage = new Storage("./data/shrek.txt");
+        ArrayList<Task> tasks = storage.load();
+
 
         while (true) {
             String input = myObj.nextLine().trim();
@@ -37,6 +39,7 @@ public class Shrek {
                         }
                         Task t = new Todo(parts[1].trim());
                         tasks.add(t);
+                        storage.save(tasks);
                         printAddedTask(t, tasks.size());
                     }
                     case DEADLINE -> {
@@ -51,6 +54,7 @@ public class Shrek {
                         }
                         Task t = new Deadline(description, by);
                         tasks.add(t);
+                        storage.save(tasks);
                         printAddedTask(t, tasks.size());
                     }
                     case EVENT -> {
@@ -67,6 +71,7 @@ public class Shrek {
                         }
                         Task t = new Event(description, from, to);
                         tasks.add(t);
+                        storage.save(tasks);
                         printAddedTask(t, tasks.size());
                     }
                     case LIST -> printTaskList(tasks);
@@ -77,6 +82,7 @@ public class Shrek {
                         int index = parseIndex(parts[1], tasks.size());
                         Task t = tasks.get(index);
                         t.markAsDone();
+                        storage.save(tasks);
                         printMarkUnmark(t, true);
                     }
                     case UNMARK -> {
@@ -86,6 +92,7 @@ public class Shrek {
                         int index = parseIndex(parts[1], tasks.size());
                         Task t = tasks.get(index);
                         t.markAsNotDone();
+                        storage.save(tasks);
                         printMarkUnmark(t, false);
                     }
                     case DELETE -> {
@@ -95,6 +102,7 @@ public class Shrek {
                         int index = parseIndex(parts[1], tasks.size());
                         Task t = tasks.get(index);
                         tasks.remove(index);
+                        storage.save(tasks);
                         printDeleteTask(tasks, t);
                     }
                     default -> throw new ShrekException("I don't speak your language. I don't understand: " + command);
