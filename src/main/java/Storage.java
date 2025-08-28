@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 public class Storage {
     private final File file;
+    private Parser parser;
 
     public Storage(String filePath) {
         this.file = new File(filePath);
@@ -33,9 +34,11 @@ public class Storage {
             BufferedReader br = new BufferedReader(new FileReader(file));
             String line;
             while ((line = br.readLine()) != null) {
-                Task t = parseTask(line);
-                if (t != null) {
-                    tasks.add(t);
+                try {
+                    Task task = Parser.parseTaskFromFile(line);
+                    tasks.add(task);
+                } catch (ShrekException e) {
+                    System.out.println("Skipping corrupted line: " + e.getMessage());
                 }
             }
             br.close();
@@ -66,31 +69,12 @@ public class Storage {
         }
     }
 
-    private Task parseTask(String line) {
-        try {
-            String[] parts = line.split(" \\| ");
-            String type = parts[0];
-            boolean isDone = parts[1].equals("1");
-            String desc = parts[2];
-
-            Task t;
-            switch (type) {
-                case "T":
-                    t = new Todo(desc);
-                    break;
-                case "D":
-                    t = new Deadline(desc, parts[3]);
-                    break;
-                case "E":
-                    t = new Event(desc, parts[3], parts[4]);
-                    break;
-                default:
-                    return null;
-            }
-            if (isDone) t.markAsDone();
-            return t;
-        } catch (Exception e) {
-            return null; // corrupted line
-        }
-    }
+//    private Task parseTask(String line) {
+//        try {
+//            return Parser.parseTask(line);
+//        } catch (ShrekException e) {
+//            System.out.println("Skipping corrupted line: " + e.getMessage());
+//            return null;
+//        }
+//    }
 }
