@@ -1,3 +1,11 @@
+package instruction;
+
+import task.TaskList;
+import task.Task;
+import ui.Ui;
+import storage.Storage;
+import util.ShrekException;
+
 public class DeleteInstruction extends Instruction {
     private int index;
 

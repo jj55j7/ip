@@ -1,3 +1,6 @@
+package task;
+
+import util.ShrekException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
@@ -5,6 +8,10 @@ import java.time.format.DateTimeParseException;
 public class Deadline extends Task {
     protected LocalDate by;
 
+    // Add a public getter method
+    public LocalDate getBy() {
+        return by;
+    }
 
     public Deadline(String description, String by) throws ShrekException {
         super(description);

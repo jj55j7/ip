@@ -1,3 +1,7 @@
+package ui;
+
+import task.*;
+import util.ShrekException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -58,7 +62,7 @@ public class Ui {
         boolean found = false;
 
         for (Task t : tasks) {
-            if (t instanceof Deadline d && d.by.equals(date)) {
+            if (t instanceof Deadline d && d.getBy().equals(date)) {  // Use getter instead of direct access
                 System.out.println("       " + t);
                 found = true;
             } else if (t instanceof Event e) {

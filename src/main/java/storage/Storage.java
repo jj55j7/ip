@@ -1,3 +1,9 @@
+package storage;
+
+import task.Task;
+import parser.Parser;
+import util.ShrekException;
+
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -68,13 +74,4 @@ public class Storage {
             System.out.println("Error saving file: " + e.getMessage());
         }
     }
-
-//    private Task parseTask(String line) {
-//        try {
-//            return Parser.parseTask(line);
-//        } catch (ShrekException e) {
-//            System.out.println("Skipping corrupted line: " + e.getMessage());
-//            return null;
-//        }
-//    }
 }

@@ -1,5 +1,12 @@
 import java.util.Scanner;
 
+import instruction.Instruction;
+import parser.Parser;
+import storage.Storage;
+import ui.Ui;
+import util.ShrekException;
+import task.TaskList;
+
 public class Shrek {
     private Storage storage;
     private TaskList tasks;
