@@ -34,9 +34,11 @@ public class Storage {
             BufferedReader br = new BufferedReader(new FileReader(file));
             String line;
             while ((line = br.readLine()) != null) {
-                Task t = parseTask(line);
-                if (t != null) {
-                    tasks.add(t);
+                try {
+                    Task task = Parser.parseTaskFromFile(line);
+                    tasks.add(task);
+                } catch (ShrekException e) {
+                    System.out.println("Skipping corrupted line: " + e.getMessage());
                 }
             }
             br.close();
@@ -67,12 +69,12 @@ public class Storage {
         }
     }
 
-    private Task parseTask(String line) {
-        try {
-            return Parser.parseTask(line);
-        } catch (ShrekException e) {
-            System.out.println("Skipping corrupted line: " + e.getMessage());
-            return null;
-        }
-    }
+//    private Task parseTask(String line) {
+//        try {
+//            return Parser.parseTask(line);
+//        } catch (ShrekException e) {
+//            System.out.println("Skipping corrupted line: " + e.getMessage());
+//            return null;
+//        }
+//    }
 }
