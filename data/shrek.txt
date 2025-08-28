@@ -1,18 +1,27 @@
+D | 0 | homework | 2030-01-01
+E | 1 | hello | 2025-01-01 12:00 | 2026-01-01 13:00
+T | 0 | borrow book
+T | 0 | test    task
+T | 0 | borrow book
+T | 0 | test    task
+T | 0 | borrow book
+T | 0 | test    task
 T | 0 | read book
-T | 1 | really really long description to test wrapping
+T | 0 | really really long description to test wrapping
 T | 0 | 1
 T | 0 | 2
 T | 0 | 3
 T | 0 | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-T | 0 | test 123
-T | 0 | test 456
-T | 1 | 2
-T | 0 | 4
-T | 0 | 5
-T | 0 | 6
-T | 0 | 7
-T | 0 | task
-T | 0 | nothing
-E | 0 | go school | Dec 12 2025, 2:00pm | Dec 12 2025, 4:00pm
-D | 0 | submit assignment | Dec 12 2025
-E | 0 | go school | Dec 12 2025, 2:00pm | Dec 21 2025, 4:00pm
+E | 0 | go school | 2025-12-12 14:00 | 2025-12-12 16:00
+E | 0 | go school | 2025-12-12 14:00 | 2025-12-21 16:00
+T | 0 | borrow book
+T | 0 | test    task
+T | 0 | read book
+T | 0 | really really long description to test wrapping
+T | 0 | 1
+T | 0 | 2
+T | 0 | 3
+T | 0 | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+E | 0 | go school | 2025-12-12 14:00 | 2025-12-12 16:00
+E | 0 | go school | 2025-12-12 14:00 | 2025-12-21 16:00
+T | 0 | 123
