@@ -1,9 +1,9 @@
 package instruction;
 
-import task.TaskList;
-import task.Task;
-import ui.Ui;
 import storage.Storage;
+import task.Task;
+import task.TaskList;
+import ui.Ui;
 import util.ShrekException;
 
 /**
@@ -17,7 +17,7 @@ public class MarkInstruction extends Instruction {
     /**
      * Constructs a MarkInstruction with the specified task index and mark status.
      *
-     * @param index the zero-based index of the task to mark/unmark
+     * @param index      the zero-based index of the task to mark/unmark
      * @param markAsDone true to mark as done, false to unmark
      */
     public MarkInstruction(int index, boolean markAsDone) {
@@ -29,8 +29,8 @@ public class MarkInstruction extends Instruction {
      * Executes the mark instruction by updating the task's completion status,
      * saving the updated list to storage, and displaying a confirmation message.
      *
-     * @param tasks the task list containing the task to be updated
-     * @param ui the user interface for displaying messages
+     * @param tasks   the task list containing the task to be updated
+     * @param ui      the user interface for displaying messages
      * @param storage the storage system for persisting task data
      * @throws ShrekException if the index is invalid or out of bounds
      */

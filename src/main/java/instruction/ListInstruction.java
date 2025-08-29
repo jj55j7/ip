@@ -1,10 +1,8 @@
 package instruction;
 
-import task.TaskList;
-import task.Task;
-import ui.Ui;
 import storage.Storage;
-import util.ShrekException;
+import task.TaskList;
+import ui.Ui;
 
 /**
  * Represents an instruction to display all tasks in the task list.
@@ -14,8 +12,8 @@ public class ListInstruction extends Instruction {
     /**
      * Executes the list instruction by displaying all tasks in the task list.
      *
-     * @param tasks the task list to be displayed
-     * @param ui the user interface for displaying the task list
+     * @param tasks   the task list to be displayed
+     * @param ui      the user interface for displaying the task list
      * @param storage the storage system (unused in this instruction)
      */
     @Override

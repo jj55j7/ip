@@ -1,11 +1,10 @@
 package instruction;
 
-import task.TaskList;
-import task.Task;
-import ui.Ui;
-import storage.Storage;
-import util.ShrekException;
 import java.time.LocalDate;
+
+import storage.Storage;
+import task.TaskList;
+import ui.Ui;
 
 /**
  * Represents an instruction to display tasks occurring on a specific date.
@@ -28,8 +27,8 @@ public class OnDateInstruction extends Instruction {
      * Executes the on-date instruction by displaying tasks that occur on the specified date.
      * Includes deadlines due on that date and events spanning that date.
      *
-     * @param tasks the task list to filter by date
-     * @param ui the user interface for displaying the filtered tasks
+     * @param tasks   the task list to filter by date
+     * @param ui      the user interface for displaying the filtered tasks
      * @param storage the storage system (unused in this instruction)
      */
     @Override

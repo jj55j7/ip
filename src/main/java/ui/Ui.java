@@ -1,9 +1,12 @@
 package ui;
 
-import task.*;
-import util.ShrekException;
 import java.time.LocalDate;
 import java.util.ArrayList;
+
+import task.Deadline;
+import task.Event;
+import task.Task;
+import util.ShrekException;
 
 /**
  * Handles all user interface interactions for the Shrek application.
@@ -14,7 +17,7 @@ public class Ui {
      * Parses a string input into a task index with validation.
      *
      * @param input the string input containing the task number
-     * @param size the current size of the task list
+     * @param size  the current size of the task list
      * @return the zero-based index of the task
      * @throws ShrekException if the input is not a valid integer or is out of range
      */
@@ -34,7 +37,7 @@ public class Ui {
     /**
      * Displays a confirmation message when a task is successfully added.
      *
-     * @param t the task that was added
+     * @param t    the task that was added
      * @param size the new size of the task list after addition
      */
     public static void printAddedTask(Task t, int size) {
@@ -61,7 +64,7 @@ public class Ui {
     /**
      * Displays a confirmation message when a task is marked or unmarked.
      *
-     * @param t the task that was marked or unmarked
+     * @param t    the task that was marked or unmarked
      * @param mark true if marked as done, false if unmarked
      */
     public static void printMarkUnmark(Task t, boolean mark) {
@@ -81,7 +84,7 @@ public class Ui {
      * Displays a confirmation message when a task is successfully deleted.
      *
      * @param tasks the task list after deletion
-     * @param t the task that was deleted
+     * @param t     the task that was deleted
      */
     public static void printDeleteTask(ArrayList<Task> tasks, Task t) {
         System.out.println("     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
@@ -96,7 +99,7 @@ public class Ui {
      * Includes deadlines due on that date and events spanning that date.
      *
      * @param tasks the list of tasks to filter by date
-     * @param date the date to filter tasks by
+     * @param date  the date to filter tasks by
      */
     public static void printTasksOnDate(ArrayList<Task> tasks, LocalDate date) {
         System.out.println("     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");

@@ -1,9 +1,9 @@
 package instruction;
 
-import task.TaskList;
-import task.Task;
-import ui.Ui;
 import storage.Storage;
+import task.Task;
+import task.TaskList;
+import ui.Ui;
 import util.ShrekException;
 
 /**
@@ -26,8 +26,8 @@ public class DeleteInstruction extends Instruction {
      * Executes the delete instruction by removing the task at the specified index,
      * saving the updated list to storage, and displaying a confirmation message.
      *
-     * @param tasks the task list from which the task will be removed
-     * @param ui the user interface for displaying messages
+     * @param tasks   the task list from which the task will be removed
+     * @param ui      the user interface for displaying messages
      * @param storage the storage system for persisting task data
      * @throws ShrekException if the index is invalid or out of bounds
      */

@@ -1,10 +1,8 @@
 package instruction;
 
-import task.TaskList;
-import task.Task;
-import ui.Ui;
 import storage.Storage;
-import util.ShrekException;
+import task.TaskList;
+import ui.Ui;
 
 /**
  * Represents an instruction to exit the application.
@@ -14,8 +12,8 @@ public class ExitInstruction extends Instruction {
     /**
      * Executes the exit instruction by displaying the goodbye message.
      *
-     * @param tasks the task list (unused in this instruction)
-     * @param ui the user interface for displaying the goodbye message
+     * @param tasks   the task list (unused in this instruction)
+     * @param ui      the user interface for displaying the goodbye message
      * @param storage the storage system (unused in this instruction)
      */
     @Override

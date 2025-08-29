@@ -1,4 +1,5 @@
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertInstanceOf;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.ByteArrayInputStream;
@@ -31,7 +32,7 @@ public class ShrekTest {
     @Test
     public void testParseTodoCommand() throws ShrekException {
         Instruction instr = Parser.parse("todo borrow book");
-        assertTrue(instr instanceof AddInstruction);
+        assertInstanceOf(AddInstruction.class, instr);
 
         AddInstruction addInstr = (AddInstruction) instr;
         TaskList list = new TaskList();
@@ -54,7 +55,7 @@ public class ShrekTest {
     @Test
     public void testParseDeadlineCommand() throws ShrekException {
         Instruction instr = Parser.parse("deadline return book /by 2025-01-01");
-        assertTrue(instr instanceof AddInstruction);
+        assertInstanceOf(AddInstruction.class, instr);
 
         AddInstruction addInstr = (AddInstruction) instr;
         TaskList list = new TaskList();
@@ -96,8 +97,7 @@ public class ShrekTest {
 
         String actualOutput = out.toString();
 
-        String expected = ""
-                + "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
+        String expected = "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
                 + "      Hello I'm Shrek!\n"
                 + "      Welcome to my Swamp!\n"
                 + "      What can I do for you?\n"
