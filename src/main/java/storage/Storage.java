@@ -1,21 +1,30 @@
 package storage;
 
-import task.Task;
-import parser.Parser;
-import util.ShrekException;
-
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import parser.Parser;
+import task.Task;
+import util.ShrekException;
+
+/**
+ * Handles file storage operations for the Shrek application.
+ * This class manages loading tasks from and saving tasks to a data file.
+ */
 public class Storage {
     private final File file;
     private Parser parser;
 
+    /**
+     * Constructs a Storage object with the specified file path.
+     *
+     * @param filePath the path to the data file for storing tasks
+     */
     public Storage(String filePath) {
         this.file = new File(filePath);
     }
