@@ -1,9 +1,12 @@
 package ui;
 
-import task.*;
-import util.ShrekException;
 import java.time.LocalDate;
 import java.util.ArrayList;
+
+import task.Deadline;
+import task.Event;
+import task.Task;
+import util.ShrekException;
 
 public class Ui {
     // Parse index safely
@@ -79,6 +82,25 @@ public class Ui {
         }
         if (!found) {
             System.out.println("      No onions (tasks) on this date!");
+        }
+        System.out.println("     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+    }
+
+    public static void printFind(ArrayList<Task> tasks, String word) {
+        System.out.println("     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        System.out.println("      Matching onions (tasks) with: " + word);
+        boolean found = false;
+
+        for (int i = 0; i < tasks.size(); i++) {
+            Task t = tasks.get(i);
+            if (t.getDescription().toLowerCase().contains(word.toLowerCase())) {
+                System.out.println("      " + (i + 1) + "." + t);
+                found = true;
+            }
+        }
+
+        if (!found) {
+            System.out.println("      No matching onions (tasks) for: " + word);
         }
         System.out.println("     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
     }

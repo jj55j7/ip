@@ -1,12 +1,22 @@
 package parser;
 
-import instruction.*;
-import task.*;
-import util.Command;
-import util.ShrekException;
-
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
+
+import instruction.AddInstruction;
+import instruction.DeleteInstruction;
+import instruction.ExitInstruction;
+import instruction.FindInstruction;
+import instruction.Instruction;
+import instruction.ListInstruction;
+import instruction.MarkInstruction;
+import instruction.OnDateInstruction;
+import task.Deadline;
+import task.Event;
+import task.Task;
+import task.Todo;
+import util.Command;
+import util.ShrekException;
 
 public class Parser {
 
@@ -20,35 +30,38 @@ public class Parser {
 
         // Then create the appropriate Instruction object
         switch (commandEnum) {
-            case BYE:
-                return new ExitInstruction();
+        case BYE:
+            return new ExitInstruction();
 
-            case LIST:
-                return new ListInstruction();
+        case LIST:
+            return new ListInstruction();
 
-            case TODO:
-                return parseTodo(arguments);
+        case TODO:
+            return parseTodo(arguments);
 
-            case DEADLINE:
-                return parseDeadline(arguments);
+        case DEADLINE:
+            return parseDeadline(arguments);
 
-            case EVENT:
-                return parseEvent(arguments);
+        case EVENT:
+            return parseEvent(arguments);
 
-            case MARK:
-                return parseMark(arguments, true);
+        case MARK:
+            return parseMark(arguments, true);
 
-            case UNMARK:
-                return parseMark(arguments, false);
+        case UNMARK:
+            return parseMark(arguments, false);
 
-            case DELETE:
-                return parseDelete(arguments);
+        case DELETE:
+            return parseDelete(arguments);
 
-            case ONDATE:
-                return parseOnDate(arguments);
+        case ONDATE:
+            return parseOnDate(arguments);
 
-            default:
-                throw new ShrekException("I don't speak your language. I don't understand: " + commandWord);
+        case FIND:
+            return parseFind(arguments);
+
+        default:
+            throw new ShrekException("I don't speak your language. I don't understand: " + commandWord);
         }
     }
 
@@ -170,6 +183,14 @@ public class Parser {
         }
     }
 
+
+    private static Instruction parseFind(String arguments) throws ShrekException {
+        if (arguments.trim().isEmpty()) {
+            throw new ShrekException("Shrek needs a word to find tasks!");
+        }
+        return new FindInstruction(arguments.trim());
+    }
+
     // Keep the file parsing method for Storage
     public static Task parseTaskFromFile(String line) throws ShrekException {
         String[] parts = line.split(" \\| ");
@@ -183,26 +204,26 @@ public class Parser {
 
         Task task;
         switch (type) {
-            case "T":
-                if (parts.length != 3) {
-                    throw new ShrekException("Invalid todo format in file: " + line);
-                }
-                task = new Todo(desc);
-                break;
-            case "D":
-                if (parts.length != 4) {
-                    throw new ShrekException("Invalid deadline format in file: " + line);
-                }
-                task = new Deadline(desc, parts[3]);
-                break;
-            case "E":
-                if (parts.length != 5) {
-                    throw new ShrekException("Invalid event format in file: " + line);
-                }
-                task = new Event(desc, parts[3], parts[4]);
-                break;
-            default:
-                throw new ShrekException("Stinky onion (Corrupted task) in storage: " + line);
+        case "T":
+            if (parts.length != 3) {
+                throw new ShrekException("Invalid todo format in file: " + line);
+            }
+            task = new Todo(desc);
+            break;
+        case "D":
+            if (parts.length != 4) {
+                throw new ShrekException("Invalid deadline format in file: " + line);
+            }
+            task = new Deadline(desc, parts[3]);
+            break;
+        case "E":
+            if (parts.length != 5) {
+                throw new ShrekException("Invalid event format in file: " + line);
+            }
+            task = new Event(desc, parts[3], parts[4]);
+            break;
+        default:
+            throw new ShrekException("Stinky onion (Corrupted task) in storage: " + line);
         }
 
         if (isDone) {

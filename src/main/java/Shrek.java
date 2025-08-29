@@ -3,14 +3,14 @@ import java.util.Scanner;
 import instruction.Instruction;
 import parser.Parser;
 import storage.Storage;
+import task.TaskList;
 import ui.Ui;
 import util.ShrekException;
-import task.TaskList;
 
 public class Shrek {
-    private Storage storage;
-    private TaskList tasks;
-    private Ui ui;
+    private final Storage storage;
+    private final TaskList tasks;
+    private final Ui ui;
 
     public Shrek(String filePath) {
         ui = new Ui();
@@ -18,8 +18,12 @@ public class Shrek {
         tasks = new TaskList(storage.load());
     }
 
+    public static void main(String[] args) {
+        new Shrek("./data/shrek.txt").run();
+    }
+
     public void run() {
-        ui.showWelcome();
+        Ui.showWelcome();
         Scanner scanner = new Scanner(System.in);
         boolean isExit = false;
 
@@ -32,13 +36,9 @@ public class Shrek {
                 instruction.execute(tasks, ui, storage);
                 isExit = instruction.isExit();
             } catch (ShrekException e) {
-                ui.showError(e.getMessage());
+                Ui.showError(e.getMessage());
             }
         }
         scanner.close();
-    }
-
-    public static void main(String[] args) {
-        new Shrek("./data/shrek.txt").run();
     }
 }

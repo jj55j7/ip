@@ -9,7 +9,8 @@ public enum Command {
     UNMARK,
     DELETE,
     BYE,
-    ONDATE;
+    ONDATE,
+    FIND;
 
     public static Command fromString(String input) throws ShrekException {
         try {
