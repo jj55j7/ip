@@ -18,3 +18,10 @@ T | 0 | 123
 D | 1 | hello | 5050-01-01
 E | 0 | todo | 2050-10-10 12:00 | 2040-10-10 13:00
 T | 0 | task
+T | 1 | homework
+T | 0 | house
+T | 0 | jelly beans eat snacks
+T | 0 | eat food
+T | 0 | random eat EAT
+T | 0 | Eat
+T | 0 | eAt

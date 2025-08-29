@@ -6,6 +6,7 @@ import java.time.format.DateTimeParseException;
 import instruction.AddInstruction;
 import instruction.DeleteInstruction;
 import instruction.ExitInstruction;
+import instruction.FindInstruction;
 import instruction.Instruction;
 import instruction.ListInstruction;
 import instruction.MarkInstruction;
@@ -22,6 +23,7 @@ import util.ShrekException;
  * This class serves as the main parser for converting text commands into application instructions
  * and for parsing stored task data from files.
  */
+
 public class Parser {
 
     /**
@@ -67,6 +69,9 @@ public class Parser {
 
         case ONDATE:
             return parseOnDate(arguments);
+
+        case FIND:
+            return parseFind(arguments);
 
         default:
             throw new ShrekException("I don't speak your language. I don't understand: " + commandWord);
@@ -233,6 +238,14 @@ public class Parser {
         } catch (DateTimeParseException e) {
             throw new ShrekException("Shrek needs a valid date in *yyyy-MM-dd* format, e.g. 2025-01-01");
         }
+    }
+
+
+    private static Instruction parseFind(String arguments) throws ShrekException {
+        if (arguments.trim().isEmpty()) {
+            throw new ShrekException("Shrek needs a word to find tasks!");
+        }
+        return new FindInstruction(arguments.trim());
     }
 
     /**

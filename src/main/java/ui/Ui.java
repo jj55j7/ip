@@ -12,6 +12,11 @@ import util.ShrekException;
  * Handles all user interface interactions for the Shrek application.
  * This class manages displaying messages, prompts, and task information to the user.
  */
+import task.Deadline;
+import task.Event;
+import task.Task;
+import util.ShrekException;
+
 public class Ui {
     /**
      * Parses a string input into a task index with validation.
@@ -124,6 +129,25 @@ public class Ui {
         }
         if (!found) {
             System.out.println("      No onions (tasks) on this date!");
+        }
+        System.out.println("     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+    }
+
+    public static void printFind(ArrayList<Task> tasks, String word) {
+        System.out.println("     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        System.out.println("      Matching onions (tasks) with: " + word);
+        boolean found = false;
+
+        for (int i = 0; i < tasks.size(); i++) {
+            Task t = tasks.get(i);
+            if (t.getDescription().toLowerCase().contains(word.toLowerCase())) {
+                System.out.println("      " + (i + 1) + "." + t);
+                found = true;
+            }
+        }
+
+        if (!found) {
+            System.out.println("      No matching onions (tasks) for: " + word);
         }
         System.out.println("     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
     }

@@ -71,4 +71,12 @@ event go school /from 2025-12-12 14:00 /to 2025-12-21 16:00
 
 ondate 2025-12-20
 
+todo eat
+todo jelly bean eat food
+todo Eat
+todo eAt
+todo yummy tummy eat tummy eat food eat
+
+find eat
+
 bye

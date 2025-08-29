@@ -27,6 +27,10 @@ public abstract class Task {
         this.isDone = false;
     }
 
+    public String getDescription() {
+        return this.description;
+    }
+
     /**
      * Returns the status icon representing the task's completion state.
      *
