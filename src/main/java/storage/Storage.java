@@ -12,10 +12,19 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * Handles file storage operations for the Shrek application.
+ * This class manages loading tasks from and saving tasks to a data file.
+ */
 public class Storage {
     private final File file;
     private Parser parser;
 
+    /**
+     * Constructs a Storage object with the specified file path.
+     *
+     * @param filePath the path to the data file for storing tasks
+     */
     public Storage(String filePath) {
         this.file = new File(filePath);
     }

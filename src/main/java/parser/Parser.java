@@ -8,8 +8,20 @@ import util.ShrekException;
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
 
+/**
+ * Handles parsing of user input and file data into executable instructions and tasks.
+ * This class serves as the main parser for converting text commands into application instructions
+ * and for parsing stored task data from files.
+ */
 public class Parser {
 
+    /**
+     * Parses user input string and converts it into an executable instruction.
+     *
+     * @param userInput the raw user input string to parse
+     * @return an Instruction object corresponding to the parsed command
+     * @throws ShrekException if the command is invalid or contains errors
+     */
     public static Instruction parse(String userInput) throws ShrekException {
         String[] parts = userInput.split(" ", 2);
         String commandWord = parts[0].trim().toLowerCase();
@@ -52,6 +64,13 @@ public class Parser {
         }
     }
 
+    /**
+     * Parses arguments for a todo command and creates the corresponding instruction.
+     *
+     * @param arguments the arguments string following the todo command
+     * @return an AddInstruction containing a new Todo task
+     * @throws ShrekException if the description is empty
+     */
     private static Instruction parseTodo(String arguments) throws ShrekException {
         if (arguments.trim().isEmpty()) {
             throw new ShrekException("No Onions?!? The description of a todo cannot be empty.");
@@ -59,6 +78,13 @@ public class Parser {
         return new AddInstruction(new Todo(arguments.trim()));
     }
 
+    /**
+     * Parses arguments for a deadline command and creates the corresponding instruction.
+     *
+     * @param arguments the arguments string following the deadline command
+     * @return an AddInstruction containing a new Deadline task
+     * @throws ShrekException if the format is invalid or arguments are missing
+     */
     private static Instruction parseDeadline(String arguments) throws ShrekException {
         if (!arguments.contains("/by")) {
             throw new ShrekException("Deadlines must have a description and a /by date.");
@@ -79,6 +105,14 @@ public class Parser {
         return new AddInstruction(new Deadline(description, by));
     }
 
+    /**
+     * Parses arguments for an event command and creates the corresponding instruction.
+     * Handles both /from before /to and /to before /from argument orders.
+     *
+     * @param arguments the arguments string following the event command
+     * @return an AddInstruction containing a new Event task
+     * @throws ShrekException if the format is invalid or arguments are missing
+     */
     private static Instruction parseEvent(String arguments) throws ShrekException {
         // Check if both /from and /to are present
         if (!arguments.contains("/from") || !arguments.contains("/to")) {
@@ -131,6 +165,14 @@ public class Parser {
         return new AddInstruction(new Event(description, from, to));
     }
 
+    /**
+     * Parses arguments for mark/unmark commands and creates the corresponding instruction.
+     *
+     * @param arguments the arguments string containing the task index
+     * @param markAsDone true for mark command, false for unmark command
+     * @return a MarkInstruction with the specified index and mark status
+     * @throws ShrekException if the index is missing or invalid
+     */
     private static Instruction parseMark(String arguments, boolean markAsDone) throws ShrekException {
         if (arguments.trim().isEmpty()) {
             throw new ShrekException("Shrek needs a task number to " + (markAsDone ? "mark" : "unmark") + "!");
@@ -144,6 +186,13 @@ public class Parser {
         }
     }
 
+    /**
+     * Parses arguments for a delete command and creates the corresponding instruction.
+     *
+     * @param arguments the arguments string containing the task index
+     * @return a DeleteInstruction with the specified index
+     * @throws ShrekException if the index is missing or invalid
+     */
     private static Instruction parseDelete(String arguments) throws ShrekException {
         if (arguments.trim().isEmpty()) {
             throw new ShrekException("Shrek needs a task number to delete!");
@@ -157,6 +206,13 @@ public class Parser {
         }
     }
 
+    /**
+     * Parses arguments for an ondate command and creates the corresponding instruction.
+     *
+     * @param arguments the arguments string containing the date
+     * @return an OnDateInstruction with the specified date
+     * @throws ShrekException if the date is missing or invalid
+     */
     private static Instruction parseOnDate(String arguments) throws ShrekException {
         if (arguments.trim().isEmpty()) {
             throw new ShrekException("Shrek needs a date! Format: yyyy-MM-dd");
@@ -170,6 +226,13 @@ public class Parser {
         }
     }
 
+    /**
+     * Parses a line from the storage file and converts it into a Task object.
+     *
+     * @param line the line from the storage file to parse
+     * @return a Task object reconstructed from the file data
+     * @throws ShrekException if the line format is invalid or corrupted
+     */
     // Keep the file parsing method for Storage
     public static Task parseTaskFromFile(String line) throws ShrekException {
         String[] parts = line.split(" \\| ");
