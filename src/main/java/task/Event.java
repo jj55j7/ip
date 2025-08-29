@@ -5,14 +5,28 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 
+/**
+ * Represents an event task with specific start and end times.
+ * Extends the base Task class to include time-bound event functionality.
+ */
 public class Event extends Task {
     private LocalDateTime from;
     private LocalDateTime to;
 
+    /**
+     * Returns the start time of the event.
+     *
+     * @return the LocalDateTime representing the event start time
+     */
     public LocalDateTime getFrom() {
         return from;
     }
 
+    /**
+     * Returns the end time of the event.
+     *
+     * @return the LocalDateTime representing the event end time
+     */
     public LocalDateTime getTo() {
         return to;
     }
@@ -25,6 +39,14 @@ public class Event extends Task {
     private static final DateTimeFormatter OUTPUT_FORMAT =
             DateTimeFormatter.ofPattern("MMM d yyyy, h:mma");
 
+    /**
+     * Constructs an Event task with the specified description, start time, and end time.
+     *
+     * @param description the event description
+     * @param from the start time string in yyyy-MM-dd HH:mm format
+     * @param to the end time string in yyyy-MM-dd HH:mm format
+     * @throws ShrekException if the date/time format is invalid
+     */
     public Event(String description, String from, String to) throws ShrekException {
         super(description);
         try {
@@ -37,6 +59,12 @@ public class Event extends Task {
         }
     }
 
+    /**
+     * Returns a string representation of the Event task.
+     * Includes task type, status, description, and formatted start/end times.
+     *
+     * @return formatted string representation of the task
+     */
     @Override
     public String toString() {
         return "[E]" + super.toString()
@@ -44,6 +72,12 @@ public class Event extends Task {
                 + " to: " + to.format(OUTPUT_FORMAT) + ")";
     }
 
+    /**
+     * Returns the file format representation of the Event task for storage.
+     * Format: "E | status | description | start_time | end_time"
+     *
+     * @return string representation suitable for file storage
+     */
     @Override
     public String toFileFormat() {
         return "E | " + (isDone ? "1" : "0") + " | " + description

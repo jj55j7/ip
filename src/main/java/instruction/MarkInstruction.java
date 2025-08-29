@@ -6,15 +6,34 @@ import ui.Ui;
 import storage.Storage;
 import util.ShrekException;
 
+/**
+ * Represents an instruction to mark or unmark a task as done.
+ * This instruction handles both marking tasks as completed and unmarking them.
+ */
 public class MarkInstruction extends Instruction {
     private int index;
     private boolean markAsDone;
 
+    /**
+     * Constructs a MarkInstruction with the specified task index and mark status.
+     *
+     * @param index the zero-based index of the task to mark/unmark
+     * @param markAsDone true to mark as done, false to unmark
+     */
     public MarkInstruction(int index, boolean markAsDone) {
         this.index = index;
         this.markAsDone = markAsDone;
     }
 
+    /**
+     * Executes the mark instruction by updating the task's completion status,
+     * saving the updated list to storage, and displaying a confirmation message.
+     *
+     * @param tasks the task list containing the task to be updated
+     * @param ui the user interface for displaying messages
+     * @param storage the storage system for persisting task data
+     * @throws ShrekException if the index is invalid or out of bounds
+     */
     @Override
     public void execute(TaskList tasks, Ui ui, Storage storage) throws ShrekException {
         Task task = tasks.get(index);
