@@ -61,7 +61,7 @@ todo Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tem
 mark 1 2 3
 
 event go school /from 2025-12-12 14:00 /to 2025-12-12 16:00
-deadline submit assignment /by 2025-12-event go school /from 2025-12-12 14:00 /to 2025-12-25 16:0012
+deadline submit assignment /by 2025-12-event go school /from 2025-12-12 14:00 /to 2025-12-25 16:00
 
 ondate 2025-12-12
 ondate 2025-12-13
