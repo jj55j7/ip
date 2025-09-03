@@ -33,7 +33,7 @@ public class Storage {
      * Loads tasks from the data file into memory.
      * If the file or folder does not exist, it creates them and returns an empty task list.
      *
-     * @return ArrayList<Task> the list of tasks loaded from file
+     * @return ArrayList&lt;Task&gt; the list of tasks loaded from file
      */
     public ArrayList<Task> load() {
         // open file, read line by line, parse each into Task objects

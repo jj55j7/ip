@@ -9,14 +9,6 @@ public abstract class Task {
     protected boolean isDone;
 
     /**
-     * Returns the file format representation of the task.
-     * Must be implemented by concrete task subclasses.
-     *
-     * @return string representation suitable for file storage
-     */
-    public abstract String toFileFormat();
-
-    /**
      * Constructs a Task with the specified description.
      * Initializes the task as not done.
      *
@@ -26,6 +18,14 @@ public abstract class Task {
         this.description = description;
         this.isDone = false;
     }
+
+    /**
+     * Returns the file format representation of the task.
+     * Must be implemented by concrete task subclasses.
+     *
+     * @return string representation suitable for file storage
+     */
+    public abstract String toFileFormat();
 
     public String getDescription() {
         return this.description;

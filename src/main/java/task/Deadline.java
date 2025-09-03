@@ -1,9 +1,10 @@
 package task;
 
-import util.ShrekException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
+
+import util.ShrekException;
 
 /**
  * Represents a task with a specific deadline date.
@@ -13,20 +14,10 @@ public class Deadline extends Task {
     protected LocalDate by;
 
     /**
-     * Returns the deadline date of this task.
-     *
-     * @return the LocalDate representing the deadline
-     */
-    // Add a public getter method
-    public LocalDate getBy() {
-        return by;
-    }
-
-    /**
      * Constructs a Deadline task with the specified description and due date.
      *
      * @param description the task description
-     * @param by the deadline date string in yyyy-MM-dd format
+     * @param by          the deadline date string in yyyy-MM-dd format
      * @throws ShrekException if the date format is invalid
      */
     public Deadline(String description, String by) throws ShrekException {
@@ -36,6 +27,16 @@ public class Deadline extends Task {
         } catch (DateTimeParseException e) {
             throw new ShrekException("Shrek needs the date in *year-month-day* format, e.g. 2025-01-01");
         }
+    }
+
+    /**
+     * Returns the deadline date of this task.
+     *
+     * @return the LocalDate representing the deadline
+     */
+    // Add a public getter method
+    public LocalDate getBy() {
+        return by;
     }
 
     /**

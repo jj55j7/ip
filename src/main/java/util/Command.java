@@ -1,5 +1,8 @@
 package util;
 
+/**
+ * Enum representing all valid commands supported by the Shrek application.
+ */
 public enum Command {
     TODO,
     DEADLINE,
@@ -12,6 +15,13 @@ public enum Command {
     ONDATE,
     FIND;
 
+    /**
+     * Converts a string input to the corresponding Command enum value.
+     *
+     * @param input the string input to convert
+     * @return the corresponding Command enum value
+     * @throws ShrekException if the input does not match any valid command
+     */
     public static Command fromString(String input) throws ShrekException {
         try {
             return Command.valueOf(input.toUpperCase());
