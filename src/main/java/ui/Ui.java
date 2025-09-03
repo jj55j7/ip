@@ -10,13 +10,8 @@ import util.ShrekException;
 
 /**
  * Handles all user interface interactions for the Shrek application.
- * This class manages displaying messages, prompts, and task information to the user.
+ * Responsible for displaying messages and formatting output.
  */
-import task.Deadline;
-import task.Event;
-import task.Task;
-import util.ShrekException;
-
 public class Ui {
     /**
      * Parses a string input into a task index with validation.
@@ -112,7 +107,8 @@ public class Ui {
         boolean found = false;
 
         for (Task t : tasks) {
-            if (t instanceof Deadline d && d.getBy().equals(date)) {  // Use getter instead of direct access
+            // Use getter instead of direct access
+            if (t instanceof Deadline d && d.getBy().equals(date)) {
                 System.out.println("       " + t);
                 found = true;
             } else if (t instanceof Event e) {
@@ -120,8 +116,8 @@ public class Ui {
                 LocalDate endDate = e.getTo().toLocalDate();
 
                 // Check if query date is within [startDate, endDate]
-                if ((date.isEqual(startDate) || date.isAfter(startDate)) &&
-                        (date.isEqual(endDate) || date.isBefore(endDate))) {
+                if ((date.isEqual(startDate) || date.isAfter(startDate))
+                        && (date.isEqual(endDate) || date.isBefore(endDate))) {
                     System.out.println("       " + t);
                     found = true;
                 }
@@ -133,6 +129,12 @@ public class Ui {
         System.out.println("     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
     }
 
+    /**
+     * Displays tasks that match the search keyword.
+     *
+     * @param tasks the list of tasks to search through
+     * @param word  the keyword to search for
+     */
     public static void printFind(ArrayList<Task> tasks, String word) {
         System.out.println("     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         System.out.println("      Matching onions (tasks) with: " + word);

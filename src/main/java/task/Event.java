@@ -1,17 +1,46 @@
 package task;
 
-import util.ShrekException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
+
+import util.ShrekException;
 
 /**
  * Represents an event task with specific start and end times.
  * Extends the base Task class to include time-bound event functionality.
  */
 public class Event extends Task {
+    // input format we accept
+    private static final DateTimeFormatter INPUT_FORMAT =
+            DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+
+    // how we want to display it back to the user
+    private static final DateTimeFormatter OUTPUT_FORMAT =
+            DateTimeFormatter.ofPattern("MMM d yyyy, h:mma");
+
     private LocalDateTime from;
     private LocalDateTime to;
+
+    /**
+     * Constructs an Event task with the specified description, start time, and end time.
+     *
+     * @param description the event description
+     * @param from        the start time string in yyyy-MM-dd HH:mm format
+     * @param to          the end time string in yyyy-MM-dd HH:mm format
+     * @throws ShrekException if the date/time format is invalid
+     */
+    public Event(String description, String from, String to) throws ShrekException {
+        super(description);
+        try {
+            this.from = LocalDateTime.parse(from, INPUT_FORMAT);
+            this.to = LocalDateTime.parse(to, INPUT_FORMAT);
+        } catch (DateTimeParseException e) {
+            throw new ShrekException(
+                    "Shrek needs a valid date/time in *yyyy-MM-dd HH:mm* format, e.g. 2025-01-01 05:00"
+            );
+        }
+    }
 
     /**
      * Returns the start time of the event.
@@ -29,34 +58,6 @@ public class Event extends Task {
      */
     public LocalDateTime getTo() {
         return to;
-    }
-
-    // input format we accept
-    private static final DateTimeFormatter INPUT_FORMAT =
-            DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
-
-    // how we want to display it back to the user
-    private static final DateTimeFormatter OUTPUT_FORMAT =
-            DateTimeFormatter.ofPattern("MMM d yyyy, h:mma");
-
-    /**
-     * Constructs an Event task with the specified description, start time, and end time.
-     *
-     * @param description the event description
-     * @param from the start time string in yyyy-MM-dd HH:mm format
-     * @param to the end time string in yyyy-MM-dd HH:mm format
-     * @throws ShrekException if the date/time format is invalid
-     */
-    public Event(String description, String from, String to) throws ShrekException {
-        super(description);
-        try {
-            this.from = LocalDateTime.parse(from, INPUT_FORMAT);
-            this.to = LocalDateTime.parse(to, INPUT_FORMAT);
-        } catch (DateTimeParseException e) {
-            throw new ShrekException(
-                    "Shrek needs a valid date/time in *yyyy-MM-dd HH:mm* format, e.g. 2025-01-01 05:00"
-            );
-        }
     }
 
     /**
