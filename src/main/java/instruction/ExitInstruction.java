@@ -10,15 +10,16 @@ import ui.Ui;
  */
 public class ExitInstruction extends Instruction {
     /**
-     * Executes the exit instruction by displaying the goodbye message.
+     * Executes the exit instruction by returning the goodbye message.
      *
      * @param tasks   the task list (unused in this instruction)
-     * @param ui      the user interface for displaying the goodbye message
+     * @param ui      the user interface for generating the goodbye message
      * @param storage the storage system (unused in this instruction)
+     * @return goodbye message string
      */
     @Override
-    public void execute(TaskList tasks, Ui ui, Storage storage) {
-        ui.showGoodbye();
+    public String execute(TaskList tasks, Ui ui, Storage storage) {
+        return ui.showGoodbye();
     }
 
     /**

@@ -7,12 +7,10 @@ T | 0 | Eat
 T | 0 | eAt
 T | 0 | yummy tummy eat tummy eat food eat
 T | 0 | borrow book
-T | 0 | test    task
 T | 0 | read book
 T | 0 | really really long description to test wrapping
 T | 0 | 1
 T | 0 | 2
-T | 0 | 3
 E | 0 | go school | 2025-12-12 14:00 | 2025-12-12 16:00
 E | 0 | go school | 2025-12-12 14:00 | 2025-12-21 16:00
 T | 0 | eat
@@ -23,3 +21,5 @@ T | 0 | yummy tummy eat tummy eat food eat
 T | 0 | work
 D | 0 | helo world | 2020-12-12
 E | 0 | food eat yum | 2020-12-23 03:00 | 2020-01-23 04:00
+T | 0 | work
+T | 0 | work

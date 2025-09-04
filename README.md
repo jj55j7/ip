@@ -35,7 +35,7 @@ Getting started is a breeze:
 
 ## 💻 For the Java Enthusiasts
 
-Shrek is built with Java and follows OOP principles. Here's a peek at the main entry point:
+Shrek is built with Java and follows OOP principles. Here's a peek at the chatbot entry point:
 
 ```java
 public class Shrek {
@@ -49,7 +49,7 @@ public class Shrek {
         tasks = new TaskList(storage.load());
     }
 
-    public static void main(String[] args) {
+    public static void chatbot(String[] args) {
         new Shrek("./data/shrek.txt").run();
     }
     // ... rest of the code ...

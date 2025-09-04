@@ -24,17 +24,18 @@ public class DeleteInstruction extends Instruction {
 
     /**
      * Executes the delete instruction by removing the task at the specified index,
-     * saving the updated list to storage, and displaying a confirmation message.
+     * saving the updated list to storage, and returning a confirmation message.
      *
      * @param tasks   the task list from which the task will be removed
-     * @param ui      the user interface for displaying messages
+     * @param ui      the user interface for generating messages
      * @param storage the storage system for persisting task data
+     * @return confirmation message about the deleted task
      * @throws ShrekException if the index is invalid or out of bounds
      */
     @Override
-    public void execute(TaskList tasks, Ui ui, Storage storage) throws ShrekException {
+    public String execute(TaskList tasks, Ui ui, Storage storage) throws ShrekException {
         Task removedTask = tasks.remove(index);
         storage.save(tasks.getAllTasks());
-        ui.printDeleteTask(tasks.getAllTasks(), removedTask);
+        return ui.printDeleteTask(tasks.getAllTasks(), removedTask);
     }
 }
