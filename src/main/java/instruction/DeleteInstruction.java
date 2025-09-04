@@ -32,7 +32,7 @@ public class DeleteInstruction extends Instruction {
      * @throws ShrekException if the index is invalid or out of bounds
      */
     @Override
-    public void execute(TaskList tasks, Ui ui, Storage storage) throws ShrekException {
+    public String execute(TaskList tasks, Ui ui, Storage storage) throws ShrekException {
         Task removedTask = tasks.remove(index);
         storage.save(tasks.getAllTasks());
         ui.printDeleteTask(tasks.getAllTasks(), removedTask);

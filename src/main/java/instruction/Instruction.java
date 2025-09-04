@@ -18,7 +18,7 @@ public abstract class Instruction {
      * @param storage the storage system for data persistence
      * @throws ShrekException if an error occurs during instruction execution
      */
-    public abstract void execute(TaskList tasks, Ui ui, Storage storage) throws ShrekException;
+    public abstract String execute(TaskList tasks, Ui ui, Storage storage) throws ShrekException;
 
     /**
      * Indicates whether this instruction should terminate the application.

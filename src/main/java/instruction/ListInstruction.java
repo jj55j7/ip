@@ -17,7 +17,7 @@ public class ListInstruction extends Instruction {
      * @param storage the storage system (unused in this instruction)
      */
     @Override
-    public void execute(TaskList tasks, Ui ui, Storage storage) {
+    public String execute(TaskList tasks, Ui ui, Storage storage) {
         ui.printTaskList(tasks.getAllTasks());
     }
 }

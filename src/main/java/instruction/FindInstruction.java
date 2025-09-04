@@ -30,7 +30,7 @@ public class FindInstruction extends Instruction {
      * @param storage The storage component (not used in this instruction).
      */
     @Override
-    public void execute(TaskList tasks, Ui ui, Storage storage) {
+    public String execute(TaskList tasks, Ui ui, Storage storage) {
         ui.printFind(tasks.getAllTasks(), word);
     }
 }

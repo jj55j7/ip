@@ -35,7 +35,7 @@ public class MarkInstruction extends Instruction {
      * @throws ShrekException if the index is invalid or out of bounds
      */
     @Override
-    public void execute(TaskList tasks, Ui ui, Storage storage) throws ShrekException {
+    public String execute(TaskList tasks, Ui ui, Storage storage) throws ShrekException {
         Task task = tasks.get(index);
         if (markAsDone) {
             task.markAsDone();

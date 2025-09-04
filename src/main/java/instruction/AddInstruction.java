@@ -33,7 +33,7 @@ public class AddInstruction extends Instruction {
      * @throws ShrekException if an error occurs during task addition or storage operations
      */
     @Override
-    public void execute(TaskList tasks, Ui ui, Storage storage) throws ShrekException {
+    public String execute(TaskList tasks, Ui ui, Storage storage) throws ShrekException {
         tasks.add(taskToAdd);
         storage.save(tasks.getAllTasks());
         ui.printAddedTask(taskToAdd, tasks.size());
