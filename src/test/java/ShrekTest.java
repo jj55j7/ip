@@ -1,6 +1,5 @@
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertInstanceOf;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -12,6 +11,7 @@ import org.junit.jupiter.api.Test;
 import instruction.AddInstruction;
 import instruction.Instruction;
 import parser.Parser;
+import shrek.Shrek;
 import storage.Storage;
 import task.TaskList;
 import ui.Ui;
@@ -72,7 +72,7 @@ public class ShrekTest {
      * Normalizes line endings in a string by converting Windows line endings (\r\n) to Unix line endings (\n)
      * and trims whitespace.
      *
-     * @param input the string to normalize
+     * @param s the string to normalize
      * @return the normalized string with consistent line endings
      */
     private String normalize(String s) {
@@ -93,29 +93,22 @@ public class ShrekTest {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         System.setOut(new PrintStream(out));
 
-        new Shrek(testFilePath).run();
+        new Shrek(testFilePath).runTextMode();
 
         String actualOutput = out.toString();
 
-        String expected = "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
-                + "      Hello I'm Shrek!\n"
-                + "      Welcome to my Swamp!\n"
-                + "      What can I do for you?\n"
-                + "     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
-                + "     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
-                + "      Okies, onion (task) added:\n"
-                + "       [T][ ] borrow book\n"
-                + "      Now you have 1 tasks in the list.\n"
-                + "     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
-                + "     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
-                + "      Awesome! One layer of onion(task) has been removed\n"
-                + "      (marked done)\n"
-                + "       [T][X] borrow book\n"
-                + "     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
-                + "     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
-                + "      Bye! I'm going to find Princess Fiona :)\n"
-                + "      See ya later\n"
-                + "     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
+        // UPDATE THESE EXPECTATIONS to match your new UI format without ~~~~~~
+        String expected = "Hello I'm Shrek!\n"
+                + "Welcome to my Swamp!\n"
+                + "What can I do for you?\n"
+                + "Okies, onion (task) added:\n"
+                + "  [T][ ] borrow book\n"
+                + "Now you have 1 tasks in the list.\n"
+                + "Awesome! One layer of onion(task) has been removed\n"
+                + "(marked done)\n"
+                + "  [T][X] borrow book\n"
+                + "Bye! I'm going to find Princess Fiona :)\n"
+                + "See ya later\n";
 
         assertEquals(normalize(expected), normalize(actualOutput));
 

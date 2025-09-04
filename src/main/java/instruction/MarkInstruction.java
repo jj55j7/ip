@@ -27,11 +27,12 @@ public class MarkInstruction extends Instruction {
 
     /**
      * Executes the mark instruction by updating the task's completion status,
-     * saving the updated list to storage, and displaying a confirmation message.
+     * saving the updated list to storage, and returning a confirmation message.
      *
      * @param tasks   the task list containing the task to be updated
-     * @param ui      the user interface for displaying messages
+     * @param ui      the user interface for generating messages
      * @param storage the storage system for persisting task data
+     * @return confirmation message about the marked/unmarked task
      * @throws ShrekException if the index is invalid or out of bounds
      */
     @Override
@@ -43,6 +44,6 @@ public class MarkInstruction extends Instruction {
             task.markAsNotDone();
         }
         storage.save(tasks.getAllTasks());
-        ui.printMarkUnmark(task, markAsDone);
+        return ui.printMarkUnmark(task, markAsDone);
     }
 }

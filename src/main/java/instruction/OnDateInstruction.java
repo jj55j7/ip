@@ -8,7 +8,7 @@ import ui.Ui;
 
 /**
  * Represents an instruction to display tasks occurring on a specific date.
- * This instruction filters and shows tasks (deadlines and events) that are
+ * This instruction filters and returns tasks (deadlines and events) that are
  * relevant to the specified date.
  */
 public class OnDateInstruction extends Instruction {
@@ -28,9 +28,9 @@ public class OnDateInstruction extends Instruction {
      * Includes deadlines due on that date and events spanning that date.
      *
      * @param tasks   the task list to filter by date
-     * @param ui      the user interface for displaying the filtered tasks
+     * @param ui      the user interface for generating the filtered tasks message
      * @param storage the storage system (unused in this instruction)
-     * @return the formatted string of tasks on the specified date
+     * @return formatted string of tasks on the specified date
      */
     @Override
     public String execute(TaskList tasks, Ui ui, Storage storage) {

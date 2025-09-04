@@ -25,17 +25,18 @@ public class AddInstruction extends Instruction {
 
     /**
      * Executes the add instruction by adding the task to the task list,
-     * saving the updated list to storage, and displaying a confirmation message.
+     * saving the updated list to storage, and returning a confirmation message.
      *
      * @param tasks   the task list to which the task will be added
-     * @param ui      the user interface for displaying messages
+     * @param ui      the user interface for generating messages
      * @param storage the storage system for persisting task data
+     * @return confirmation message about the added task
      * @throws ShrekException if an error occurs during task addition or storage operations
      */
     @Override
     public String execute(TaskList tasks, Ui ui, Storage storage) throws ShrekException {
         tasks.add(taskToAdd);
         storage.save(tasks.getAllTasks());
-        ui.printAddedTask(taskToAdd, tasks.size());
+        return ui.printAddedTask(taskToAdd, tasks.size());
     }
 }
