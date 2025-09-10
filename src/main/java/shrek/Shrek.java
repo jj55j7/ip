@@ -46,7 +46,7 @@ public class Shrek {
             String response = instruction.execute(tasks, ui, storage);
 
             if (instruction.isExit()) {
-                // You can add GUI exit logic here if needed
+                // add GUI exit logic here if needed
             }
 
             return response;
