@@ -37,9 +37,6 @@ public class Main extends Application {
             stage.setMinWidth(417);
             // stage.setMaxWidth(417); // Add this if you didn't automatically resize elements
 
-            // Get the controller and inject your Shrek instance
-            //fxmlLoader.<MainWindow>getController().setShrek(shrek);
-
             // Set window title and show it
             stage.setTitle("Shrek Chatbot");
             stage.show();

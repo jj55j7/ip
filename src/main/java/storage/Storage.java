@@ -18,7 +18,6 @@ import util.ShrekException;
  */
 public class Storage {
     private final File file;
-    private Parser parser;
 
     /**
      * Constructs a Storage object with the specified file path.

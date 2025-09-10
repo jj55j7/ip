@@ -44,11 +44,6 @@ public class Shrek {
         try {
             Instruction instruction = Parser.parse(input);
             String response = instruction.execute(tasks, ui, storage);
-
-            if (instruction.isExit()) {
-                // You can add GUI exit logic here if needed
-            }
-
             return response;
         } catch (ShrekException e) {
             return ui.showError(e.getMessage());
