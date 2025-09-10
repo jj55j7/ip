@@ -1,5 +1,7 @@
 package gui;
 
+import javafx.animation.PauseTransition;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
@@ -7,6 +9,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+import javafx.util.Duration;
 import shrek.Shrek;
 
 /**
@@ -24,8 +28,9 @@ public class MainWindow extends AnchorPane {
     private Button sendButton;
 
     private Shrek shrek;
-    private Image userImage = new Image(this.getClass().getResourceAsStream("/images/DaUser.jpg"));
-    private Image shrekImage = new Image(this.getClass().getResourceAsStream("/images/DaShrek.jpg"));
+    private final Image userImage = new Image(this.getClass().getResourceAsStream("/images/DaUser.jpg"));
+    private final Image shrekImage = new Image(this.getClass().getResourceAsStream("/images/DaShrek.jpg"));
+    private Stage stage; // Reference to the main stage
 
     /**
      * Initializes the GUI components after FXML loading.
@@ -35,9 +40,6 @@ public class MainWindow extends AnchorPane {
     public void initialize() {
         // Make the scroll pane automatically scroll to the bottom
         scrollPane.vvalueProperty().bind(dialogContainer.heightProperty());
-
-        // DON'T show welcome message here - shrek is still null!
-        // Welcome message will be shown in setShrek() method
     }
 
     /**
@@ -50,6 +52,13 @@ public class MainWindow extends AnchorPane {
         dialogContainer.getChildren().addAll(
                 DialogBox.getDukeDialog(shrek.getWelcomeMessage(), shrekImage)
         );
+    }
+
+    /**
+     * Sets the stage reference for closing the window.
+     */
+    public void setStage(Stage stage) {
+        this.stage = stage;
     }
 
     /**
@@ -69,9 +78,30 @@ public class MainWindow extends AnchorPane {
         // Clear the input field
         userInput.clear();
 
-        // Optional: Handle exit command
+        // Handle exit command
         if (input.equalsIgnoreCase("bye")) {
-            // add exit logic here if needed
+            handleExitCommand();
         }
+    }
+
+    /**
+     * Handles the exit command with a 5-second delay before closing.
+     */
+    private void handleExitCommand() {
+        // Disable input while waiting to close
+        userInput.setDisable(true);
+        sendButton.setDisable(true);
+
+        // Create a pause transition for 5 seconds
+        PauseTransition delay = new PauseTransition(Duration.seconds(2));
+        delay.setOnFinished(event -> {
+            // Close the application
+            if (stage != null) {
+                stage.close();
+            } else {
+                Platform.exit(); // Fallback if stage reference is not set
+            }
+        });
+        delay.play();
     }
 }

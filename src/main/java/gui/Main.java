@@ -14,7 +14,7 @@ import shrek.Shrek;
  * This class sets up the main window and starts the JavaFX application.
  */
 public class Main extends Application {
-    // Change Duke to Shrek - this is your main application class
+
     private Shrek shrek = new Shrek("./data/shrek.txt");
 
     @Override
@@ -23,6 +23,11 @@ public class Main extends Application {
             // Load the FXML file that defines the GUI layout
             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/view/MainWindow.fxml"));
             AnchorPane ap = fxmlLoader.load();
+
+            // Get the controller and inject dependencies
+            MainWindow controller = fxmlLoader.getController();
+            controller.setShrek(shrek);
+            controller.setStage(stage); // Pass the stage reference
 
             // Create the scene and set it on the stage
             Scene scene = new Scene(ap);
@@ -33,7 +38,7 @@ public class Main extends Application {
             // stage.setMaxWidth(417); // Add this if you didn't automatically resize elements
 
             // Get the controller and inject your Shrek instance
-            fxmlLoader.<MainWindow>getController().setShrek(shrek);
+            //fxmlLoader.<MainWindow>getController().setShrek(shrek);
 
             // Set window title and show it
             stage.setTitle("Shrek Chatbot");
