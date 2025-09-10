@@ -1,5 +1,6 @@
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertInstanceOf;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -13,7 +14,9 @@ import instruction.Instruction;
 import parser.Parser;
 import shrek.Shrek;
 import storage.Storage;
+import task.Task;
 import task.TaskList;
+import task.Todo;
 import ui.Ui;
 import util.ShrekException;
 

@@ -37,45 +37,20 @@ public class Parser {
         String[] parts = userInput.split(" ", 2);
         String commandWord = parts[0].trim().toLowerCase();
         String arguments = parts.length > 1 ? parts[1] : "";
-
-        // First, validate using your existing Command enum
         Command commandEnum = Command.fromString(commandWord);
-
-        // Then create the appropriate Instruction object
-        switch (commandEnum) {
-        case BYE:
-            return new ExitInstruction();
-
-        case LIST:
-            return new ListInstruction();
-
-        case TODO:
-            return parseTodo(arguments);
-
-        case DEADLINE:
-            return parseDeadline(arguments);
-
-        case EVENT:
-            return parseEvent(arguments);
-
-        case MARK:
-            return parseMark(arguments, true);
-
-        case UNMARK:
-            return parseMark(arguments, false);
-
-        case DELETE:
-            return parseDelete(arguments);
-
-        case ONDATE:
-            return parseOnDate(arguments);
-
-        case FIND:
-            return parseFind(arguments.trim().split("\\s+"));
-
-        default:
-            throw new ShrekException("I don't speak your language. I don't understand: " + commandWord);
-        }
+        return switch (commandEnum) {
+        case BYE -> new ExitInstruction();
+        case LIST -> new ListInstruction();
+        case TODO -> parseTodo(arguments);
+        case DEADLINE -> parseDeadline(arguments);
+        case EVENT -> parseEvent(arguments);
+        case MARK -> parseMark(arguments, true);
+        case UNMARK -> parseMark(arguments, false);
+        case DELETE -> parseDelete(arguments);
+        case ONDATE -> parseOnDate(arguments);
+        case FIND -> parseFind(arguments.trim().split("\\s+"));
+        default -> throw new ShrekException("I don't speak your language. I don't understand: " + commandWord);
+        };
     }
 
     /**
@@ -86,6 +61,7 @@ public class Parser {
      * @throws ShrekException if the description is empty
      */
     private static Instruction parseTodo(String arguments) throws ShrekException {
+        assert arguments != null : "Arguments should not be null";
         if (arguments.trim().isEmpty()) {
             throw new ShrekException("No Onions?!? The description of a todo cannot be empty.");
         }
@@ -100,6 +76,7 @@ public class Parser {
      * @throws ShrekException if the format is invalid or arguments are missing
      */
     private static Instruction parseDeadline(String arguments) throws ShrekException {
+        assert arguments != null : "Arguments should not be null";
         if (!arguments.contains("/by")) {
             throw new ShrekException("Deadlines must have a description and a /by date.");
         }
