@@ -2,7 +2,6 @@ T | 0 | 2
 E | 0 | go school | 2025-12-12 14:00 | 2025-12-12 16:00
 E | 0 | go school | 2025-12-12 14:00 | 2025-12-21 16:00
 T | 0 | eat
-T | 0 | jelly bean eat food
 T | 0 | Eat
 T | 0 | eAt
 T | 0 | yummy tummy eat tummy eat food eat
@@ -18,8 +17,11 @@ T | 0 | jelly bean eat food
 T | 0 | Eat
 T | 0 | eAt
 T | 0 | yummy tummy eat tummy eat food eat
-T | 0 | work
 D | 0 | helo world | 2020-12-12
 E | 0 | food eat yum | 2020-12-23 03:00 | 2020-01-23 04:00
 T | 0 | work
 T | 0 | work
+T | 0 | work
+T | 0 | assignment
+D | 0 | ip | 2025-01-01
+T | 0 | jelly

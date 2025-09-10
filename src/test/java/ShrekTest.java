@@ -97,7 +97,6 @@ public class ShrekTest {
 
         String actualOutput = out.toString();
 
-        // UPDATE THESE EXPECTATIONS to match your new UI format without ~~~~~~
         String expected = "Hello I'm Shrek!\n"
                 + "Welcome to my Swamp!\n"
                 + "What can I do for you?\n"
