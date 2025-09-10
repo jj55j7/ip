@@ -16,7 +16,6 @@ T | 0 | jelly bean eat food
 T | 0 | Eat
 T | 0 | eAt
 D | 0 | helo world | 2020-12-12
-E | 0 | food eat yum | 2020-12-23 03:00 | 2020-01-23 04:00
 T | 0 | work
 T | 0 | work
 T | 0 | work
@@ -25,4 +24,6 @@ D | 0 | ip | 2025-01-01
 T | 1 | homework today
 T | 0 | today homework
 T | 0 | school go
+E | 0 | nus homecoming | 2020-12-12 02:00 | 2020-12-12 03:00
+E | 0 | nus homecoming | 2020-12-12 02:00 | 2020-12-13 01:00
 T | 0 | school
