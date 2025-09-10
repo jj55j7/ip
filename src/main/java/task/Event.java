@@ -40,6 +40,10 @@ public class Event extends Task {
                     "Shrek needs a valid date/time in *yyyy-MM-dd HH:mm* format, e.g. 2025-01-01 05:00"
             );
         }
+        // Ensure start time is not after end time
+        if (this.from.isAfter(this.to)) {
+            throw new ShrekException("Shrek says the start time must be before or equal to the end time!");
+        }
     }
 
     /**
