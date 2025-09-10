@@ -38,6 +38,7 @@ public class MarkInstruction extends Instruction {
     @Override
     public String execute(TaskList tasks, Ui ui, Storage storage) throws ShrekException {
         Task task = tasks.get(index);
+        assert task != null : "Task should not be null at index " + index;
         if (markAsDone) {
             task.markAsDone();
         } else {

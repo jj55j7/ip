@@ -1,5 +1,5 @@
 T | 0 | 2
-E | 0 | go school | 2025-12-12 14:00 | 2025-12-12 16:00
+E | 1 | go school | 2025-12-12 14:00 | 2025-12-12 16:00
 E | 0 | go school | 2025-12-12 14:00 | 2025-12-21 16:00
 T | 0 | eat
 T | 0 | Eat
@@ -20,8 +20,9 @@ E | 0 | food eat yum | 2020-12-23 03:00 | 2020-01-23 04:00
 T | 0 | work
 T | 0 | work
 T | 0 | work
-T | 0 | assignment
+T | 1 | assignment
 D | 0 | ip | 2025-01-01
-T | 0 | homework today
+T | 1 | homework today
 T | 0 | today homework
 T | 0 | school go
+T | 0 | school
