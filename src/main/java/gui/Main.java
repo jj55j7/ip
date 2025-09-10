@@ -28,6 +28,10 @@ public class Main extends Application {
             Scene scene = new Scene(ap);
             stage.setScene(scene);
 
+            stage.setMinHeight(220);
+            stage.setMinWidth(417);
+            // stage.setMaxWidth(417); // Add this if you didn't automatically resize elements
+
             // Get the controller and inject your Shrek instance
             fxmlLoader.<MainWindow>getController().setShrek(shrek);
 
