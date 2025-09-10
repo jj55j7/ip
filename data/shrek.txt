@@ -15,7 +15,6 @@ T | 0 | eat
 T | 0 | jelly bean eat food
 T | 0 | Eat
 T | 0 | eAt
-T | 0 | yummy tummy eat tummy eat food eat
 D | 0 | helo world | 2020-12-12
 E | 0 | food eat yum | 2020-12-23 03:00 | 2020-01-23 04:00
 T | 0 | work
@@ -23,3 +22,6 @@ T | 0 | work
 T | 0 | work
 T | 0 | assignment
 D | 0 | ip | 2025-01-01
+T | 0 | homework today
+T | 0 | today homework
+T | 0 | school go

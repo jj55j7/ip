@@ -71,7 +71,7 @@ public class Parser {
             return parseOnDate(arguments);
 
         case FIND:
-            return parseFind(arguments);
+            return parseFind(arguments.trim().split("\\s+"));
 
         default:
             throw new ShrekException("I don't speak your language. I don't understand: " + commandWord);
@@ -240,12 +240,22 @@ public class Parser {
         }
     }
 
+    /**
+     * Parses arguments for a find command and creates the corresponding instruction.
+     * Supports one or more search keywords using varargs.
+     *
+     * @param keywords one or more keywords to search for
+     * @return a FindInstruction containing the joined search keywords
+     * @throws ShrekException if no keywords are provided or empty
+     */
+    private static Instruction parseFind(String... keywords) throws ShrekException {
+        String query = String.join(" ", keywords).trim();
 
-    private static Instruction parseFind(String arguments) throws ShrekException {
-        if (arguments.trim().isEmpty()) {
+        if (query.isEmpty()) {
             throw new ShrekException("Shrek needs a word to find tasks!");
         }
-        return new FindInstruction(arguments.trim());
+
+        return new FindInstruction(query);
     }
 
     /**
