@@ -2,6 +2,8 @@ package ui;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import task.Deadline;
 import task.Event;
@@ -102,43 +104,39 @@ public class Ui {
     }
 
     /**
-     * Returns a formatted string of tasks that occur on a specific date.
+     * Returns a formatted string of tasks that occur on a specific date using streams.
      *
      * @param tasks the list of tasks to filter by date
      * @param date  the date to filter tasks by
      * @return formatted message string
      */
     public String printTasksOnDate(ArrayList<Task> tasks, LocalDate date) {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Tasks on ")
-                .append(date)
-                .append(":\n");
-        boolean found = false;
+        List<String> matchingTasks = tasks.stream()
+                .filter(task -> isTaskOnDate(task, date))
+                .map(task -> "  " + task + "\n")
+                .collect(Collectors.toList());
 
-        for (Task t : tasks) {
-            if (t instanceof Deadline d && d.getBy().equals(date)) {
-                sb.append("  ")
-                        .append(t)
-                        .append("\n");
-                found = true;
-            } else if (t instanceof Event e) {
-                LocalDate startDate = e.getFrom().toLocalDate();
-                LocalDate endDate = e.getTo().toLocalDate();
-
-                if ((date.isEqual(startDate) || date.isAfter(startDate))
-                        && (date.isEqual(endDate) || date.isBefore(endDate))) {
-                    sb.append("  ")
-                            .append(t)
-                            .append("\n");
-                    found = true;
-                }
-            }
-        }
-
-        if (!found) {
+        if (matchingTasks.isEmpty()) {
             return "No onions (tasks) on " + date + "!";
         }
-        return sb.toString();
+
+        return "Tasks on " + date + ":\n" + String.join("", matchingTasks);
+    }
+
+    /**
+     * Returns a boolean if task is on or during date.
+     *
+     */
+    private boolean isTaskOnDate(Task task, LocalDate date) {
+        if (task instanceof Deadline d) {
+            return d.getBy().equals(date);
+        } else if (task instanceof Event e) {
+            LocalDate startDate = e.getFrom().toLocalDate();
+            LocalDate endDate = e.getTo().toLocalDate();
+            return (date.isEqual(startDate) || date.isAfter(startDate))
+                    && (date.isEqual(endDate) || date.isBefore(endDate));
+        }
+        return false;
     }
 
     /**
