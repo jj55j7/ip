@@ -37,6 +37,7 @@ public class Storage {
     public ArrayList<Task> load() {
         // open file, read line by line, parse each into Task objects
         // return as ArrayList<Task>
+        assert file != null : "File should not be null";
         ArrayList<Task> tasks = new ArrayList<>();
         try {
             if (!file.exists()) {
@@ -50,6 +51,7 @@ public class Storage {
             while ((line = br.readLine()) != null) {
                 try {
                     Task task = Parser.parseTaskFromFile(line);
+                    assert task != null : "Parsed task should never be null";
                     tasks.add(task);
                 } catch (ShrekException e) {
                     System.out.println("Skipping corrupted line: " + e.getMessage());
@@ -69,6 +71,9 @@ public class Storage {
      * @param tasks the list of tasks to save
      */
     public void save(ArrayList<Task> tasks) {
+        assert tasks != null : "Tasks list should not be null";
+        assert file != null : "File should not be null";
+
         // open file, write tasks line by line in a chosen format
         // e.g., "T | 1 | read book"
         try {

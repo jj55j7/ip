@@ -1,5 +1,5 @@
 T | 0 | 2
-E | 0 | go school | 2025-12-12 14:00 | 2025-12-12 16:00
+E | 1 | go school | 2025-12-12 14:00 | 2025-12-12 16:00
 E | 0 | go school | 2025-12-12 14:00 | 2025-12-21 16:00
 T | 0 | eat
 T | 0 | Eat
@@ -19,10 +19,11 @@ D | 0 | helo world | 2020-12-12
 T | 0 | work
 T | 0 | work
 T | 0 | work
-T | 0 | assignment
+T | 1 | assignment
 D | 0 | ip | 2025-01-01
-T | 0 | homework today
+T | 1 | homework today
 T | 0 | today homework
 T | 0 | school go
 E | 0 | nus homecoming | 2020-12-12 02:00 | 2020-12-12 03:00
 E | 0 | nus homecoming | 2020-12-12 02:00 | 2020-12-13 01:00
+T | 0 | school

@@ -61,6 +61,7 @@ public class Parser {
      * @throws ShrekException if the description is empty
      */
     private static Instruction parseTodo(String arguments) throws ShrekException {
+        assert arguments != null : "Arguments should not be null";
         if (arguments.trim().isEmpty()) {
             throw new ShrekException("No Onions?!? The description of a todo cannot be empty.");
         }
@@ -75,6 +76,7 @@ public class Parser {
      * @throws ShrekException if the format is invalid or arguments are missing
      */
     private static Instruction parseDeadline(String arguments) throws ShrekException {
+        assert arguments != null : "Arguments should not be null";
         if (!arguments.contains("/by")) {
             throw new ShrekException("Deadlines must have a description and a /by date.");
         }
