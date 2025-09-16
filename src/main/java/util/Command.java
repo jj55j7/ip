@@ -13,7 +13,8 @@ public enum Command {
     DELETE,
     BYE,
     ONDATE,
-    FIND;
+    FIND,
+    SORT;
 
     /**
      * Converts a string input to the corresponding Command enum value.
