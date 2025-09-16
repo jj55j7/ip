@@ -5,6 +5,7 @@ import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import shrek.Shrek;
@@ -39,6 +40,15 @@ public class Main extends Application {
 
             // Set window title and show it
             stage.setTitle("Shrek Chatbot");
+
+            // Load and set the application icon (onion icon for Shrek)
+            try {
+                Image icon = new Image(getClass().getResourceAsStream("/images/onion.png"));
+                stage.getIcons().add(icon);
+            } catch (Exception e) {
+                System.out.println("Could not load icon: " + e.getMessage());
+                // Continue without icon if there's an error
+            }
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();

@@ -29,7 +29,7 @@ public class MainWindow extends AnchorPane {
 
     private Shrek shrek;
     private final Image userImage = new Image(this.getClass().getResourceAsStream("/images/DaUser.jpg"));
-    private final Image shrekImage = new Image(this.getClass().getResourceAsStream("/images/DaShrek.jpg"));
+    private final Image shrekImage = new Image(this.getClass().getResourceAsStream("/images/DaShrek.png"));
     private Stage stage; // Reference to the main stage
 
     /**
@@ -38,8 +38,11 @@ public class MainWindow extends AnchorPane {
      */
     @FXML
     public void initialize() {
-        // Make the scroll pane automatically scroll to the bottom
-        scrollPane.vvalueProperty().bind(dialogContainer.heightProperty());
+        //  Replace binding with listener for better scroll behavior
+        // This maintains auto-scroll to bottom while allowing mouse wheel scrolling
+        dialogContainer.heightProperty().addListener((obs, oldVal, newVal) -> {
+            scrollPane.setVvalue(1.0);
+        });
     }
 
     /**
@@ -85,7 +88,7 @@ public class MainWindow extends AnchorPane {
     }
 
     /**
-     * Handles the exit command with a 5-second delay before closing.
+     * Handles the exit command with a 2-second delay before closing.
      */
     private void handleExitCommand() {
         // Disable input while waiting to close
