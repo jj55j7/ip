@@ -78,7 +78,7 @@ public class Parser {
     private static Instruction parseDeadline(String arguments) throws ShrekException {
         assert arguments != null : "Arguments should not be null";
         if (!arguments.contains("/by")) {
-            throw new ShrekException("Deadlines must have a description and a /by date.");
+            throw new ShrekException("Deadlines must have a description and a /by date time.");
         }
 
         String[] deadlineParts = arguments.split("/by", 2);
