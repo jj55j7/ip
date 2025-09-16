@@ -126,7 +126,6 @@ public class Ui {
 
     /**
      * Returns a boolean if task is on or during date.
-     *
      */
     private boolean isTaskOnDate(Task task, LocalDate date) {
         if (task instanceof Deadline d) {
@@ -152,7 +151,7 @@ public class Ui {
         sb.append("Matching onions (tasks) with: ")
                 .append(word)
                 .append("\n");
-        boolean found = false;
+        boolean isFound = false;
 
         for (int i = 0; i < tasks.size(); i++) {
             Task t = tasks.get(i);
@@ -162,11 +161,11 @@ public class Ui {
                         .append(". ")
                         .append(t)
                         .append("\n");
-                found = true;
+                isFound = true;
             }
         }
 
-        if (!found) {
+        if (!isFound) {
             return "No matching onions (tasks) for: " + word;
         }
         return sb.toString();
