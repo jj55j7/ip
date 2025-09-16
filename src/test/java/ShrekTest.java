@@ -65,7 +65,7 @@ public class ShrekTest {
         addInstr.execute(list, ui, storage);
 
         assertEquals(1, list.size());
-        assertEquals("[D][ ] return book (by: Jan 1 2025, 2:00pm)", list.get(0).toString());
+        assertEquals("[D][ ] return book (by: Jan 1 2025, 2:00PM)", list.get(0).toString());
     }
 
     /**

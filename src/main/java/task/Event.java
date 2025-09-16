@@ -17,7 +17,7 @@ public class Event extends Task {
 
     // how we want to display it back to the user
     private static final DateTimeFormatter OUTPUT_FORMAT =
-            DateTimeFormatter.ofPattern("MMM d yyyy, h:mma");
+            DateTimeFormatter.ofPattern("MMM d yyyy, h:mma").withLocale(java.util.Locale.ENGLISH);
 
     private LocalDateTime from;
     private LocalDateTime to;
