@@ -31,7 +31,7 @@ Getting started is a breeze:
 - [x] **Mark Tasks as Done/Not Done**
 - [x] **Data Persistence**: Your tasks are automatically saved to `./data/shrek.txt`.
 - [x] **Search Functionality** 
-- [ ] **GUI** (Coming in a future update!)
+- [x] **GUI** 
 
 ## 💻 For the Java Enthusiasts
 
