@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import instruction.SortInstruction;
 import task.Deadline;
 import task.Event;
 import task.Task;
@@ -168,6 +169,32 @@ public class Ui {
         if (!found) {
             return "No matching onions (tasks) for: " + word;
         }
+        return sb.toString();
+    }
+
+    /**
+     * Returns a formatted string of sorted tasks.
+     *
+     * @param tasks    the sorted list of tasks
+     * @param criteria the sorting criteria used
+     * @return formatted message string
+     */
+    public String printSortedTasks(ArrayList<Task> tasks, SortInstruction.SortCriteria criteria) {
+        if (tasks.isEmpty()) {
+            return "No onions to sort! Your task list is empty.";
+        }
+
+        StringBuilder sb = new StringBuilder();
+        sb.append("Sorted onions by ").append(criteria.toString().toLowerCase()).append(":\n");
+
+        for (int i = 0; i < tasks.size(); i++) {
+            sb.append("  ")
+                    .append(i + 1)
+                    .append(": ")
+                    .append(tasks.get(i))
+                    .append("\n");
+        }
+
         return sb.toString();
     }
 

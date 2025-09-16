@@ -11,6 +11,7 @@ import instruction.Instruction;
 import instruction.ListInstruction;
 import instruction.MarkInstruction;
 import instruction.OnDateInstruction;
+import instruction.SortInstruction;
 import task.Deadline;
 import task.Event;
 import task.Task;
@@ -49,6 +50,7 @@ public class Parser {
         case DELETE -> parseDelete(arguments);
         case ONDATE -> parseOnDate(arguments);
         case FIND -> parseFind(arguments.trim().split("\\s+"));
+        case SORT -> parseSort(arguments);
         default -> throw new ShrekException("I don't speak your language. I don't understand: " + commandWord);
         };
     }
@@ -233,6 +235,30 @@ public class Parser {
         }
 
         return new FindInstruction(query);
+    }
+
+    /**
+     * Parses arguments for a sort command and creates the corresponding instruction.
+     *
+     * @param arguments the sorting criteria
+     * @return a SortInstruction with the specified criteria
+     * @throws ShrekException if the criteria is invalid
+     */
+    private static Instruction parseSort(String arguments) throws ShrekException {
+        String criteria = arguments.trim().toLowerCase();
+
+        switch (criteria) {
+        case "description":
+            return new SortInstruction(SortInstruction.SortCriteria.DESCRIPTION);
+        case "date":
+            return new SortInstruction(SortInstruction.SortCriteria.DATE);
+        case "type":
+            return new SortInstruction(SortInstruction.SortCriteria.TYPE);
+        case "":
+            throw new ShrekException("Shrek needs to know how to sort! Use: sort description/date/type");
+        default:
+            throw new ShrekException("Shrek can only sort by description, date, or type. Not: " + criteria);
+        }
     }
 
     /**
