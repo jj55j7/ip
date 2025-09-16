@@ -1,6 +1,6 @@
 package task;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 
@@ -11,7 +11,7 @@ import util.ShrekException;
  * Extends the base Task class to include a due date functionality.
  */
 public class Deadline extends Task {
-    protected LocalDate by;
+    protected LocalDateTime by;
 
     /**
      * Constructs a Deadline task with the specified description and due date.
@@ -23,9 +23,10 @@ public class Deadline extends Task {
     public Deadline(String description, String by) throws ShrekException {
         super(description);
         try {
-            this.by = LocalDate.parse(by); // convert from string to LocalDate
+            this.by = LocalDateTime.parse(by, DateTimeFormatter.ofPattern(
+                    "yyyy-MM-dd HH:mm")); // convert from string to LocalDate
         } catch (DateTimeParseException e) {
-            throw new ShrekException("Shrek needs the date in *year-month-day* format, e.g. 2025-01-01");
+            throw new ShrekException("Shrek needs the date in *year-month-day HH:mm* format, e.g. 2025-01-01 14:30");
         }
     }
 
@@ -35,7 +36,7 @@ public class Deadline extends Task {
      * @return the LocalDate representing the deadline
      */
     // Add a public getter method
-    public LocalDate getBy() {
+    public LocalDateTime getBy() {
         return by;
     }
 
@@ -48,7 +49,7 @@ public class Deadline extends Task {
     @Override
     public String toString() {
         return "[D]" + super.toString()
-                + " (by: " + by.format(DateTimeFormatter.ofPattern("MMM d yyyy")) + ")";
+                + " (by: " + by.format(DateTimeFormatter.ofPattern("MMM d yyyy, h:mma")) + ")";
     }
 
     /**
@@ -59,6 +60,7 @@ public class Deadline extends Task {
      */
     @Override
     public String toFileFormat() {
-        return "D | " + (isDone ? "1" : "0") + " | " + description + " | " + by;
+        return "D | " + (isDone ? "1" : "0") + " | " + description + " | " + by.format(
+                DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"));
     }
 }

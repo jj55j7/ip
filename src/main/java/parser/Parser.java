@@ -83,14 +83,14 @@ public class Parser {
 
         String[] deadlineParts = arguments.split("/by", 2);
         if (deadlineParts.length < 2) {
-            throw new ShrekException("Deadline format should be: description /by yyyy-MM-dd");
+            throw new ShrekException("Deadline format should be: description /by yyyy-MM-dd hh:mm");
         }
 
         String description = deadlineParts[0].trim();
         String by = deadlineParts[1].trim();
 
         if (description.isEmpty() || by.isEmpty()) {
-            throw new ShrekException("Where's my onions? Deadline description or date cannot be empty.");
+            throw new ShrekException("Where's my onions? Deadline description or date/time cannot be empty.");
         }
 
         return new AddInstruction(new Deadline(description, by));
