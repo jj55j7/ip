@@ -51,7 +51,8 @@ public class Parser {
         case ONDATE -> parseOnDate(arguments);
         case FIND -> parseFind(arguments.trim().split("\\s+"));
         case SORT -> parseSort(arguments);
-        default -> throw new ShrekException("I don't speak your language. I don't understand: " + commandWord);
+        default -> throw new ShrekException(
+                "Shrek doesn't speak your language. What's: " + commandWord + "?");
         };
     }
 
@@ -272,7 +273,7 @@ public class Parser {
     public static Task parseTaskFromFile(String line) throws ShrekException {
         String[] parts = line.split(" \\| ");
         if (parts.length < 3) {
-            throw new ShrekException("Invalid task format in file: " + line);
+            throw new ShrekException("Rotten onion! Invalid task format in file: " + line);
         }
 
         String type = parts[0];
