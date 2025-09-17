@@ -1,6 +1,6 @@
 # Shrek Task Manager User Guide 🧅
 
-![Shrek GUI](docs/Ui.png)
+![Shrek GUI](/docs/Ui.png)
 
 > "It's all about o-gre now." – Shrek, probably.
 
