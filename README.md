@@ -49,8 +49,13 @@ public class Shrek {
         tasks = new TaskList(storage.load());
     }
 
-    public static void chatbot(String[] args) {
-        new Shrek("./data/shrek.txt").run();
+    public String getResponse(String input) {
+        // Process user input and return response
+        try {
+            Instruction instruction = Parser.parse(input);
+            return instruction.execute(tasks, ui, storage);
+        } catch (ShrekException e) {
+            return ui.showError(e.getMessage());
+        }
     }
-    // ... rest of the code ...
 }

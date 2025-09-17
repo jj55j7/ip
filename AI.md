@@ -57,5 +57,11 @@ This project utilized AI tools to enhance code quality, fix issues, and improve 
 - **Reduced Bugs**: AI-assisted debugging and syntax checking
 - **Learning Enhancement**: Exposure to best practices and patterns
 
+## Images
+- **Shrek Character**: [Official DreamWorks Animation character](https://x.com/Shrek)
+- **Shrek's Swamp Background**: [Wallpapers.com](https://wallpapers.com/wallpapers/shrek-s-swamp-house-912ivi1v9qemna0n.html) 
+- **User Profile Picture**: [Pinterest](https://www.pinterest.com/pin/shrek--189432728069529529/) 
+- **Onion Icon**: [Flaticon](https://www.flaticon.com/free-icons/onion) (by Freepik)
+
 ## Note
 All AI-generated code was reviewed, tested, and adapted to fit the project's specific requirements and coding standards.
