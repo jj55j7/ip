@@ -40,6 +40,19 @@ public class Deadline extends Task {
         return by;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (!super.equals(obj)) {
+            return false;
+        }
+        if (!(obj instanceof Deadline)) {
+            return false;
+        }
+
+        Deadline other = (Deadline) obj;
+        return this.by.equals(other.by);
+    }
+
     /**
      * Returns a string representation of the Deadline task.
      * Includes task type, status, description, and formatted deadline date.

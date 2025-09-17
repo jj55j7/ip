@@ -35,7 +35,8 @@ public class Parser {
      * @throws ShrekException if the command is invalid or contains errors
      */
     public static Instruction parse(String userInput) throws ShrekException {
-        String[] parts = userInput.split(" ", 2);
+        String cleanedInput = userInput.trim().replaceAll("\\s+", " ");
+        String[] parts = cleanedInput.split(" ", 2);
         String commandWord = parts[0].trim().toLowerCase();
         String arguments = parts.length > 1 ? parts[1] : "";
         Command commandEnum = Command.fromString(commandWord);
@@ -148,8 +149,8 @@ public class Parser {
                 throw new ShrekException("Event format should be: description /from time /to time");
             }
 
-            to = timeParts[0].trim();
             from = timeParts[1].trim();
+            to = timeParts[0].trim();
         }
 
         if (description.isEmpty() || from.isEmpty() || to.isEmpty()) {

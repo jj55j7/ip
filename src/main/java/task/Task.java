@@ -55,6 +55,19 @@ public abstract class Task {
         this.isDone = false;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+
+        Task other = (Task) obj;
+        return this.description.equals(other.description);
+    }
+
     /**
      * Returns a string representation of the Task.
      * Includes status icon and description.
