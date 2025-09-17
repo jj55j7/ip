@@ -7,6 +7,7 @@ import instruction.AddInstruction;
 import instruction.DeleteInstruction;
 import instruction.ExitInstruction;
 import instruction.FindInstruction;
+import instruction.HelpInstruction;
 import instruction.Instruction;
 import instruction.ListInstruction;
 import instruction.MarkInstruction;
@@ -52,6 +53,7 @@ public class Parser {
         case ONDATE -> parseOnDate(arguments);
         case FIND -> parseFind(arguments.trim().split("\\s+"));
         case SORT -> parseSort(arguments);
+        case HELP -> new HelpInstruction();
         default -> throw new ShrekException(
                 "Shrek doesn't speak your language. What's: " + commandWord + "?");
         };
@@ -123,14 +125,17 @@ public class Parser {
             // Normal order: /from comes before /to
             String[] eventParts = arguments.split("/from", 2);
             if (eventParts.length < 2) {
-                throw new ShrekException("Shrek needs event with /from 2025-12-05 14:00 /to 2025-12-31 16:00");
+                throw new ShrekException("Invalid event format! Shrek needs: event description /from yyyy-MM-dd HH:mm "
+                        + "/to yyyy-MM-dd HH:mm\n" + "Example: event team meeting /from 2025-12-05 14:00 "
+                        + "/to 2025-12-05 16:00");
             }
 
             description = eventParts[0].trim();
             String[] timeParts = eventParts[1].split("/to", 2);
 
             if (timeParts.length < 2) {
-                throw new ShrekException("Shrek needs event with /from 2025-12-05 14:00 /to 2025-12-31 16:00");
+                throw new ShrekException("Missing time parameters!\n" + "Shrek needs event with /from 2025-12-05 "
+                        + "14:00 /to 2025-12-31 16:00");
             }
 
             from = timeParts[0].trim();
