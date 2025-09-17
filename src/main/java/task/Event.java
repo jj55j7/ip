@@ -42,7 +42,9 @@ public class Event extends Task {
         }
         // Ensure start time is not after end time
         if (this.from.isAfter(this.to)) {
-            throw new ShrekException("Shrek says the start time must be before or equal to the end time!");
+            throw new ShrekException("Shrek says the start time must be before or equal to the end time!\n"
+                    + "Start: " + this.from.format(OUTPUT_FORMAT) + "\n"
+                    + "End: " + this.to.format(OUTPUT_FORMAT));
         }
     }
 
@@ -62,6 +64,19 @@ public class Event extends Task {
      */
     public LocalDateTime getTo() {
         return to;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (!super.equals(obj)) {
+            return false;
+        }
+        if (!(obj instanceof Event)) {
+            return false;
+        }
+
+        Event other = (Event) obj;
+        return this.from.equals(other.from) && this.to.equals(other.to);
     }
 
     /**

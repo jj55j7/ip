@@ -14,6 +14,11 @@ public class Todo extends Task {
         super(description);
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj); // Todos only use description comparison
+    }
+
     /**
      * Returns a string representation of the Todo task.
      * Includes task type, status, and description.

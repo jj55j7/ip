@@ -14,7 +14,8 @@ public enum Command {
     BYE,
     ONDATE,
     FIND,
-    SORT;
+    SORT,
+    HELP;
 
     /**
      * Converts a string input to the corresponding Command enum value.

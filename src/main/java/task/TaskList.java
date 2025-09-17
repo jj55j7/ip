@@ -65,6 +65,21 @@ public class TaskList {
     }
 
     /**
+     * Checks if a task already exists in the task list (duplicate detection).
+     *
+     * @param newTask the task to check for duplicates
+     * @return true if a duplicate task exists, false otherwise
+     */
+    public boolean hasDuplicate(Task newTask) {
+        for (Task existingTask : tasks) {
+            if (existingTask.equals(newTask)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
      * Returns the number of tasks in the task list.
      *
      * @return the size of the task list

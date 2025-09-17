@@ -198,6 +198,25 @@ public class Ui {
     }
 
     /**
+     * Returns the existing commands.
+     *
+     * @return command string
+     */
+    public String showHelp() {
+        return "Available commands:\n"
+                + "* todo <description>\n"
+                + "* deadline <description> /by yyyy-MM-dd HH:mm\n"
+                + "* event <description> /from yyyy-MM-dd HH:mm /to yyyy-MM-dd HH:mm\n"
+                + "* list\n"
+                + "* mark/unmark <number>\n"
+                + "* delete <number>\n"
+                + "* find <keyword>\n"
+                + "* sort description/date/type\n"
+                + "* ondate yyyy-MM-dd\n"
+                + "* bye";
+    }
+
+    /**
      * Returns the welcome message.
      *
      * @return welcome message string
@@ -225,6 +244,7 @@ public class Ui {
      * @return formatted error message string
      */
     public String showError(String msg) {
-        return msg;
+        return msg + "\n"
+                + "Type 'help' for available commands.";
     }
 }
