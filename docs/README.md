@@ -1,4 +1,5 @@
-# Shrek Task Manager User Guide 🧅
+# Shrek 
+## User Guide 🧅
 
 ![Shrek GUI](/docs/Ui.png)
 
