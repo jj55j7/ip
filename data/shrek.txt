@@ -1,47 +1,18 @@
-T | 0 | 2
-E | 1 | go school | 2025-12-12 14:00 | 2025-12-12 16:00
-E | 0 | go school | 2025-12-12 14:00 | 2025-12-21 16:00
-T | 0 | eat
-T | 1 | Eat
-T | 0 | eAt
-T | 0 | yummy tummy eat tummy eat food eat
-T | 0 | borrow book
-T | 0 | really really long description to test wrapping
-T | 0 | 1
-T | 1 | 2
-E | 1 | go school | 2025-12-12 14:00 | 2025-12-12 16:00
-E | 0 | go school | 2025-12-12 14:00 | 2025-12-21 16:00
-T | 0 | eat
-T | 0 | jelly bean eat food
-T | 0 | Eat
-T | 0 | eAt
-T | 0 | work
-T | 0 | work
-T | 0 | work
-T | 1 | assignment
-T | 1 | homework today
-T | 0 | today homework
-T | 0 | school go
-E | 0 | nus homecoming | 2020-12-12 02:00 | 2020-12-12 03:00
-E | 0 | nus homecoming | 2020-12-12 02:00 | 2020-12-13 01:00
-T | 0 | school
-T | 0 | work
-D | 0 | hw | 2020-01-01 00:30
-D | 0 | school | 2020-12-12 13:00
-D | 0 | shower | 2000-01-01 13:10
-D | 0 | return book | 2025-01-01 14:00
-D | 0 | return book | 2025-01-01 14:00
-D | 0 | return book | 2025-01-01 14:00
-T | 0 | work
-T | 0 | more work
-T | 0 | eat
-T | 0 | hello world
-T | 0 | "Lorem ipsum" is a nonsensical, scrambled Latin-based placeholder text used in the design, publishing, and typesetting industries to demonstrate the visual form of a document without being distracted by readable content. Derived from a jumbled 1st-century BC Latin text by Cicero, its purpose is to show how a page's layout, font, and typography will look before the final, meaningful content is available.
-E | 0 | cannon event | 2020-01-01 01:00 | 2025-01-01 01:00
-E | 0 | cannon event | 2020-01-01 01:00 | 2025-01-01 01:00
-E | 0 | cannon event | 2020-01-01 01:00 | 2025-01-01 01:00
-E | 0 | cannon event | 2020-01-01 01:00 | 2025-01-01 01:00
-E | 0 | cannon event | 2020-01-01 01:00 | 2025-01-01 01:00
-T | 0 | study
-T | 0 | study study study
-D | 0 | return book | 3030-01-01 01:01
+T | 0 | make bed
+D | 1 | submit homework | 2025-01-01 01:00
+E | 0 | nus homecoming | 2025-10-10 09:00 | 2025-12-12 05:00
+T | 1 | Buy groceries
+T | 1 | Finish CS2030S lab
+T | 0 | Call mum
+D | 0 | Submit assignment | 2025-10-01 23:59
+D | 0 | Return library book | 2025-09-30 17:00
+E | 0 | CS2030S lecture | 2025-09-20 14:00 | 2025-09-20 16:00
+E | 1 | Project meeting | 2025-09-22 10:00 | 2025-09-22 12:00
+E | 0 | Hackathon | 2025-12-01 09:00 | 2025-12-02 21:00
+T | 0 | Prepare slides for machine learning presentation
+D | 0 | Apply for internship | 2025-11-15 23:59
+E | 0 | Birthday Party | 2025-12-02 09:00 | 2025-12-02 21:00
+D | 0 | go for a workout! | 2020-04-05 10:00
+T | 1 | Buy onions
+D | 0 | Return book | 2025-12-31 23:59
+E | 0 | Team meeting | 2025-12-05 14:00 | 2025-12-05 16:00
