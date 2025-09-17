@@ -11,7 +11,7 @@ Welcome to Shrek's Swamp! Shrek is your friendly, ogre-powered task manager that
 
 1. **Ensure you have Java 11 or above** installed on your computer.
 
-2. **Download the latest version** of Shrek from the [releases page](https://github.com/jj55j7/ip/releases).
+2. **Download the latest version** of Shrek from the [releases page](https://github.com/jj55j7/ip/releases/tag/A-Release).
 
 3. **Run the application** by double-clicking the `shrek.jar` file.
 

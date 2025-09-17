@@ -16,7 +16,7 @@ Shrek is:
 
 Getting started is a breeze:
 
-1.  Download the latest `shrek.jar` from the [releases page](https://github.com/jj55j7/ip/releases/tag/A-Jar).
+1.  Download the latest `shrek.jar` from the [releases page](https://github.com/jj55j7/ip/releases/tag/A-Release).
 2.  Double-click the JAR file to launch the application.
 3.  Start adding your tasks!
 4.  Let Shrek manage your tasks for you 😉
