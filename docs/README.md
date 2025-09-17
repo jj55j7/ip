@@ -1,7 +1,7 @@
 # Shrek 
 ## User Guide 🧅
 
-![Shrek GUI](/docs/Ui.png)
+![Shrek GUI](https://jj55j7.github.io/ip/Ui.png)
 
 > "It's all about o-gre now." – Shrek, probably.
 
