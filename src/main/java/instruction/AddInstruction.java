@@ -35,6 +35,10 @@ public class AddInstruction extends Instruction {
      */
     @Override
     public String execute(TaskList tasks, Ui ui, Storage storage) throws ShrekException {
+        if (tasks.hasDuplicate(taskToAdd)) {
+            throw new ShrekException("Shrek already has this onion! (Duplicate task detected)\n"
+                    + "Task: " + taskToAdd.getDescription());
+        }
         tasks.add(taskToAdd);
         storage.save(tasks.getAllTasks());
         return ui.printAddedTask(taskToAdd, tasks.size());
