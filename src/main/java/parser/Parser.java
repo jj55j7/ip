@@ -215,14 +215,16 @@ public class Parser {
      */
     private static Instruction parseOnDate(String arguments) throws ShrekException {
         if (arguments.trim().isEmpty()) {
-            throw new ShrekException("Shrek needs a date! Format: yyyy-MM-dd");
+            throw new ShrekException("Shrek needs a date! Format: yyyy-MM-dd\n"
+                    + "Example: ondate 2025-12-25");
         }
 
         try {
             LocalDate date = LocalDate.parse(arguments.trim());
             return new OnDateInstruction(date);
         } catch (DateTimeParseException e) {
-            throw new ShrekException("Shrek needs a valid date in *yyyy-MM-dd* format, e.g. 2025-01-01");
+            throw new ShrekException("Shrek needs a valid date in *yyyy-MM-dd* format!\n"
+                    + "Example: ondate 2025-12-25");
         }
     }
 

@@ -45,7 +45,15 @@ public class TaskList {
      */
     public Task get(int index) throws ShrekException {
         if (index < 0 || index >= tasks.size()) {
-            throw new ShrekException("Task index out of bounds");
+            if (tasks.isEmpty()) {
+                throw new ShrekException("Shrek's swamp is empty! No onions to find here.");
+            } else if (index < 0) {
+                throw new ShrekException("BIG onion! Task numbers start from 1, not " + (index + 1) + "!");
+            } else {
+                throw new ShrekException("That onion doesn't exist in Shrek's swamp!\n"
+                        + "Shrek only has " + tasks.size() + " task" + (tasks.size() != 1 ? "s" : "")
+                        + ". Use 'list' to see them all.");
+            }
         }
         return tasks.get(index);
     }
@@ -59,7 +67,15 @@ public class TaskList {
      */
     public Task remove(int index) throws ShrekException {
         if (index < 0 || index >= tasks.size()) {
-            throw new ShrekException("Task index out of bounds");
+            if (tasks.isEmpty()) {
+                throw new ShrekException("Shrek's swamp is already empty! No onions to YEET!");
+            } else if (index < 0) {
+                throw new ShrekException("BIG onion! Task numbers start from 1, not " + (index + 1) + "!");
+            } else {
+                throw new ShrekException("Shrek can't YEET an onion that doesn't exist!\n"
+                        + "Shrek only has " + tasks.size() + " task" + (tasks.size() != 1 ? "s" : "")
+                        + ". Use 'list' to see them all.");
+            }
         }
         return tasks.remove(index);
     }

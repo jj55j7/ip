@@ -129,7 +129,8 @@ public class Ui {
      */
     private boolean isTaskOnDate(Task task, LocalDate date) {
         if (task instanceof Deadline d) {
-            return d.getBy().equals(date);
+            // Extract just the date part from LocalDateTime for comparison
+            return d.getBy().toLocalDate().equals(date);
         } else if (task instanceof Event e) {
             LocalDate startDate = e.getFrom().toLocalDate();
             LocalDate endDate = e.getTo().toLocalDate();

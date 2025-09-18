@@ -16,3 +16,9 @@ D | 0 | go for a workout! | 2020-04-05 10:00
 T | 1 | Buy onions
 D | 0 | Return book | 2025-12-31 23:59
 E | 0 | Team meeting | 2025-12-05 14:00 | 2025-12-05 16:00
+T | 0 | clean table
+D | 0 | go for class | 2025-05-05 05:05
+T | 0 | work
+D | 0 | submission | 2025-04-04 04:04
+D | 0 | go for an outing w family | 2025-10-12 10:00
+E | 0 | nus graduation | 2025-10-10 09:00 | 2025-12-12 05:00
