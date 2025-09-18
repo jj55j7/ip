@@ -144,6 +144,10 @@ One onion has been YEETED! (task removed)
 Now you have 2 tasks in the list.
 ```
 
+**Error Cases:**
+- If task number is too big or small: `"BIG onion! Task numbers start from 1, not X!"` or `"That onion doesn't exist in Shrek's swamp!"`
+- If list is empty: `"Shrek's swamp is already empty! No onions to YEET!"`
+
 ### Smart Features
 
 #### Finding Tasks
